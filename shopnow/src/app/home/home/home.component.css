@@ -1,0 +1,401 @@
+/* Carousel CSS */
+.carousel-item img {
+  border-radius: 1em;
+  height: 420px;
+
+  object-fit: cover;
+}
+
+/* Banner Poster */
+
+.banner-poster {
+  width: 330px;
+  margin: 0px 20px 20px 10px;
+  height: 200px;
+  border-radius: 1em;
+  position: relative;
+  z-index: 1;
+}
+
+.banner-poster-content {
+  padding: 55px 20px;
+}
+.banner-poster-content h3 {
+  color: white;
+  font-size: 24px;
+}
+.banner-poster-content p {
+  color: white;
+  font-size: 16px;
+}
+
+.banner-poster:nth-child(1) {
+  background: url("https://images.unsplash.com/photo-1562184242-2b39bde0ab6f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+  contain: content;
+  background-size: 100%;
+}
+
+.banner-poster:nth-child(2) {
+  background: url("https://images.unsplash.com/photo-1567581935884-3349723552ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80");
+  contain: content;
+  background-size: 100%;
+}
+
+.banner-poster:nth-child(3) {
+  background: url("https://images.unsplash.com/photo-1600294037761-f9ef414e1036?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+  contain: content;
+  background-size: 100%;
+}
+.banner-poster:nth-child(4) {
+  background: url("https://images.unsplash.com/photo-1624814448264-f2273a961d33?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80");
+  contain: content;
+  background-size: 100%;
+}
+
+/* Shimmer Effect */
+.banner-poster::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+
+  z-index: -1;
+
+  transition: transform 500ms ease-in-out;
+  transform: scaleX(0);
+  transform-origin: middle;
+}
+.banner-poster:hover:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.1);
+  z-index: -1;
+
+  transition: transform 500ms ease-in-out;
+  transform: scaleX(1);
+  transform-origin: middle;
+}
+.banner-poster::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+
+  z-index: -1;
+
+  transition: transform 500ms ease-in-out;
+  transform: scaleY(0);
+
+  /* transform-origin: middle; */
+}
+
+.banner-poster:hover::after {
+  background: rgba(0, 0, 0, 0.1);
+  transition: transform 500ms ease-in-out;
+  transform: scaleY(1);
+
+  /* transform: scaleX(0); */
+  transform-origin: middle;
+}
+
+/* product-item */
+.product-item {
+  position: relative;
+  width: 200px;
+  height: 300px;
+  /* border-radius: 1em; */
+  transition: all 0.3s ease 0s;
+}
+.product-item:hover {
+  box-shadow: 0px 8px 13px rgba(0, 0, 0, 0.15);
+}
+.product-item:hover img {
+  transform: scale(1.05);
+}
+.product-img img {
+  width: 100%;
+  height: 280px;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+  object-fit: cover;
+}
+.product-info {
+  background: #f6f6f6 none repeat scroll 0 0;
+  padding: 20px 15px;
+}
+.brand-name {
+  color: #666666;
+  font-size: 14px;
+  font-weight: 500;
+}
+.product-title {
+  color: var(--theme-color);
+  font-weight: 600;
+  margin-top: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.product-price {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgb(77, 77, 77);
+}
+
+/* Category Poster */
+.category-poster {
+  border-radius: 1em;
+  width: 280px;
+  height: 140px;
+}
+.category-info {
+  padding: 30px 30px 10px;
+}
+.category-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+}
+.category-poster:nth-child(1) {
+  background: url("https://images.unsplash.com/photo-1597742800947-e17e915b8d83?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1025&q=80");
+  contain: content;
+  background-size: 100%;
+}
+.category-poster:nth-child(2) {
+  background: url("https://images.unsplash.com/photo-1621762781707-ee636cdd3c35?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=706&q=80");
+  contain: content;
+  background-size: 100%;
+}
+.category-poster:nth-child(3) {
+  background: url("https://images.unsplash.com/photo-1646041293779-2466bf622784?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80");
+  contain: content;
+  background-size: 100%;
+}
+.category-poster:nth-child(4) {
+  background: url("https://images.unsplash.com/photo-1585068515363-e0d67770b0fd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80");
+  contain: content;
+  background-size: 100%;
+}
+.category-poster:nth-child(5) {
+  background: url("https://images.unsplash.com/photo-1644916081706-e98b1fadc319?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+  contain: content;
+  background-size: 100%;
+}
+.category-poster:nth-child(6) {
+  background: url("https://images.unsplash.com/photo-1644408648475-57bc9c2e76f5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80");
+  contain: content;
+  background-size: 100%;
+}
+
+/* category-poster animation */
+
+.category-poster:hover {
+  /* transform: scale(1.05); */
+
+  -webkit-animation: zoomright 0.8s linear;
+  animation: zoomright 0.5s linear;
+  animation-fill-mode: forwards;
+}
+@keyframes zoomright {
+  0% {
+    background-size: 100%;
+  }
+  100% {
+    background-position-x: -1%;
+    background-size: 110%;
+  }
+}
+
+/* flash deals poster */
+.flash-poster {
+  padding: 20px 76px 20px 30px;
+
+  border-radius: 1em;
+  transition: all 0.2s ease;
+}
+.flash-poster:nth-child(1) {
+  margin: 0em 2em 0em 1em;
+}
+.flash-poster img {
+  height: 330px;
+  width: 100%;
+}
+.flash-poster .cart-button {
+  background-color: var(--theme-color);
+  color: white;
+  padding: 11px 20px;
+  border: none;
+  width: 100%;
+  border-radius: 2em;
+}
+
+.flash-poster .cart-button:hover {
+  background-color: var(--theme-color-dark);
+}
+.flash-poster:hover {
+  -moz-box-shadow: 0 0 5px #ccc;
+  -webkit-box-shadow: 0 0 5px #ccc;
+  box-shadow: 0 0 5px #ccc;
+}
+
+.flash-poster-large {
+  border-radius: 1em;
+  /* width: 730px; */
+  height: 192px;
+  padding: 45px 0px 15px 60px;
+  background-image: url("https://mageblueskytech.com/dukamarket/media/wysiwyg/banner-5.png");
+  background-size: cover;
+
+  position: relative;
+  z-index: 1;
+}
+.flash-poster-large .flash-title,
+.flash-poster-large .sale {
+  color: white;
+}
+
+.flash-poster-large::before {
+  /* border-radius: 1em; */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+
+  z-index: -1;
+
+  transition: transform 500ms ease-in-out;
+  transform: scaleX(0);
+  transform-origin: middle;
+}
+.flash-poster-large:hover:before {
+  border-radius: 1em;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.1);
+  z-index: -1;
+
+  transition: transform 500ms ease-in-out;
+  transform: scaleX(1);
+  transform-origin: middle;
+}
+.flash-poster-large::after {
+  border-radius: 1em;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+
+  z-index: -1;
+
+  transition: transform 500ms ease-in-out;
+  transform: scaleY(0);
+
+  /* transform-origin: middle; */
+}
+
+.flash-poster-large:hover::after {
+  /* border-radius: 1em; */
+  background: rgba(0, 0, 0, 0.1);
+  transition: transform 500ms ease-in-out;
+  transform: scaleY(1);
+
+  /* transform: scaleX(0); */
+  transform-origin: middle;
+}
+
+.flash-poster-small {
+  padding-top: 20px;
+  /* background-color: red; */
+  height: 180px;
+  width: 260px;
+  border-radius: 1em;
+  /* border: 1px solid wheat; */
+}
+
+.flash-poster-small img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.flash-poster-small:hover {
+  -moz-box-shadow: 0 0 5px #ccc;
+  -webkit-box-shadow: 0 0 5px #ccc;
+  box-shadow: 0 0 5px #ccc;
+}
+
+.blog {
+  /* background-color: red; */
+  border-radius: 1em;
+  position: relative;
+  overflow: hidden;
+}
+.blog:hover {
+  -webkit-transition: box-shadow 0.5s ease-out;
+  box-shadow: 0.8px 0.9px 3px #ccc;
+}
+.blog .blog-img {
+  background: url("https://mageblueskytech.com/dukamarket/media/magefan_blog/x14.jpg.pagespeed.ic.d0GSvjj8X3.webp")
+    no-repeat;
+  width: 320px;
+  height: 200px;
+  contain: content;
+  background-size: 100%;
+  border-radius: 1em 1em 0em 0em;
+}
+
+.blog .blog-img .blog-category {
+  border: none;
+  box-shadow: none transparent;
+  color: white;
+  background-color: var(--theme-color);
+  padding: 5px 10px 5px 10px;
+  border-radius: 5px;
+  position: absolute;
+  top: 10%;
+  left: 2%;
+}
+
+.blog .blog-img:hover .blog-category {
+  background-color: var(--theme-color-dark);
+}
+
+.blog:hover .blog-img {
+  -webkit-animation: zoomin 0.2s linear;
+  animation: zoomin 0.2s linear;
+  animation-fill-mode: forwards;
+  /* background-color: black; */
+}
+
+@keyframes zoomin {
+  0% {
+    background-size: 100%;
+  }
+  100% {
+    /* background-position-x: -1%; */
+    background-position-y: 1%;
+    background-size: 110%;
+  }
+}
+
+.post-bottom:hover button {
+  color: var(--theme-color);
+}
