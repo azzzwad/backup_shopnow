@@ -1,1 +1,140 @@
-<p>category works!</p>
+<main>
+  <div class="col-md-8 view-holder">
+    <div class="row">
+      <div class="col-md-1 text-center">
+        <a>
+          <i class="fa fa-th fa-2x grid-view-button"></i>
+        </a>
+      </div>
+      <div class="col-md-1">
+        <a>
+          <i class="fa fa-list fa-2x list-view-button"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- List View -->
+
+  <div class="col-md-8 list-view">
+    <ol style="padding: 0">
+      <li
+        class="list-line"
+        *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
+      >
+        <div class="col-md-12 list-product">
+          <div class="row">
+            <div class="col-md-2">
+              <img
+                class="list-product-img"
+                src="https://mageblueskytech.com/dukamarket/media/catalog/product/cache/f3ed34011b1107beefe2c20312054a83/3/0/x30_1.jpg.pagespeed.ic.pj33f2Ut1A.webp"
+                alt=""
+              />
+            </div>
+            <div class="col-md-8" style="padding: 25px 0px 25px 15px">
+              <h3 class="list-product-name">Powered Quad Camera and Android</h3>
+              <p class="list-product-description">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Quibusdam dolore sapiente inventore ex non facilis dolorum,
+                blanditiis aut eveniet officia maxime nam perferendis culpa
+                optio necessitatibus ratione corrupti saepe ipsa.
+              </p>
+            </div>
+            <div class="col-md-2">
+              <p class="list-product-availability">
+                Availability:
+                <span>
+                  <small style="color: var(--theme-color)">In Stock</small>
+                </span>
+              </p>
+              <h4 class="list-product-price">BDT 50000</h4>
+              <button class="list-product-wishlist">
+                <i class="fa fa-heart"></i> Wish List
+              </button>
+              <button class="list-product-cart">ADD TO CART</button>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ol>
+  </div>
+  <!-- Grid Views -->
+  <!-- 2 column grid -->
+
+  <div class="col-md-8">
+    <div class="col-md-12 two-grid-view">
+      <div
+        class="col-md-6 two-line"
+        *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
+      >
+        <div>
+          <img
+            class="two-grid-image"
+            src="https://mageblueskytech.com/dukamarket/media/catalog/product/cache/f3ed34011b1107beefe2c20312054a83/1/5/x15_1.jpg.pagespeed.ic.NrQ2jMqiJ9.webp"
+            alt=""
+          />
+        </div>
+        <div class="two-grid-product-info text-center">
+          <h3 class="two-grid-name">Sony Series Stereo Headphones</h3>
+          <p class="two-grid-price">BDT 45000</p>
+          <!-- <button class="two-grid-wishlist">
+          <i class="fa fa-heart"></i> Wishlist
+        </button> -->
+          <button class="two-grid-cart">ADD TO CART</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 3 column grid -->
+
+  <div class="col-md-8">
+    <div class="col-md-12 two-grid-view">
+      <div
+        class="col-md-4 two-line"
+        *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
+      >
+        <div>
+          <img
+            class="three-grid-img"
+            src="https://mageblueskytech.com/dukamarket/media/catalog/product/cache/f3ed34011b1107beefe2c20312054a83/1/5/x15_1.jpg.pagespeed.ic.NrQ2jMqiJ9.webp"
+            alt=""
+          />
+        </div>
+        <div class="two-grid-product-info text-center">
+          <h3 class="two-grid-name">Sony Series Stereo Headphones</h3>
+          <p class="two-grid-price">BDT 45000</p>
+          <!-- <button class="two-grid-wishlist">
+          <i class="fa fa-heart"></i> Wishlist
+        </button> -->
+          <button class="two-grid-cart">ADD TO CART</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4 column grid -->
+
+  <div class="col-md-8">
+    <div class="col-md-12 two-grid-view">
+      <div
+        class="col-md-3 two-line"
+        *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
+      >
+        <div>
+          <img
+            class="four-grid-img"
+            src="https://mageblueskytech.com/dukamarket/media/catalog/product/cache/f3ed34011b1107beefe2c20312054a83/1/5/x15_1.jpg.pagespeed.ic.NrQ2jMqiJ9.webp"
+            alt=""
+          />
+        </div>
+        <div class="two-grid-product-info text-center">
+          <h3 class="four-grid-name">Sony Series Stereo Headphones</h3>
+          <p class="two-grid-price">BDT 45000</p>
+          <!-- <button class="two-grid-wishlist">
+            <i class="fa fa-heart"></i> Wishlist
+          </button> -->
+          <button class="two-grid-cart">ADD TO CART</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
