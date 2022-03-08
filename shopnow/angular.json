@@ -82,13 +82,13 @@
             "styles": [
               "src/styles.css",
               "../shopnow/src/assets/css/responsive.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/bootstrap/dist/css/bootstrap.css"
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.js",
-
-              "node_modules/bootstrap/dist/js/bootstrap.js"
+              "src/assets/js/jquery.min.js",
+              "src/assets/js/bootstrap.min.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           }
         },

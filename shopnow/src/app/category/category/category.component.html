@@ -2,20 +2,38 @@
   <div class="col-md-8 view-holder">
     <div class="row">
       <div class="col-md-1 text-center">
-        <a>
+        <a (click)="twoGridView()">
           <i class="fa fa-th fa-2x grid-view-button"></i>
         </a>
       </div>
       <div class="col-md-1">
-        <a>
+        <a (click)="listView()">
           <i class="fa fa-list fa-2x list-view-button"></i>
+        </a>
+      </div>
+      <div class="col-md-1" *ngIf="gridview == true">
+        <a (click)="threeGridView()">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRw2ZWOAwrFDAGOJq7lJ1uy-6WQOA4PiMZWBA&usqp=CAU"
+            alt=""
+            style="max-height: 28px; width: 28px"
+          />
+        </a>
+      </div>
+      <div class="col-md-1" *ngIf="gridview == true">
+        <a (click)="fourGridView()">
+          <img
+            src="https://i.pinimg.com/736x/4a/fb/66/4afb660219c6733412f9b8b802a48692.jpg"
+            alt=""
+            style="max-height: 28px; width: 28px"
+          />
         </a>
       </div>
     </div>
   </div>
   <!-- List View -->
 
-  <div class="col-md-8 list-view">
+  <div class="col-md-8 list-view" *ngIf="listview == true">
     <ol style="padding: 0">
       <li
         class="list-line"
@@ -60,7 +78,7 @@
   <!-- Grid Views -->
   <!-- 2 column grid -->
 
-  <div class="col-md-8">
+  <div class="col-md-8" *ngIf="twogridview == true">
     <div class="col-md-12 two-grid-view">
       <div
         class="col-md-6 two-line"
@@ -86,7 +104,7 @@
   </div>
   <!-- 3 column grid -->
 
-  <div class="col-md-8">
+  <div class="col-md-8" *ngIf="threegridview == true">
     <div class="col-md-12 two-grid-view">
       <div
         class="col-md-4 two-line"
@@ -113,7 +131,7 @@
 
   <!-- 4 column grid -->
 
-  <div class="col-md-8">
+  <div class="col-md-8" *ngIf="fourgridview == true">
     <div class="col-md-12 two-grid-view">
       <div
         class="col-md-3 two-line"
@@ -138,3 +156,42 @@
     </div>
   </div>
 </main>
+<!-- Button trigger modal -->
+<button
+  type="button"
+  class="btn btn-primary"
+  data-bs-toggle="modal"
+  data-bs-target="#exampleModal"
+>
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">...</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
