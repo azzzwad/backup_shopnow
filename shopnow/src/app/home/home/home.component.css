@@ -1,9 +1,10 @@
 /* Carousel CSS */
-.carousel-item img {
+.picsum-img-wrapper img {
   border-radius: 1em;
   height: 420px;
 
   object-fit: cover;
+  width: 100%;
 }
 
 /* Banner Poster */
