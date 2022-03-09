@@ -127,7 +127,7 @@
 }
 .product-img img {
   width: 100%;
-  height: 280px;
+  height: auto;
   border-top-left-radius: 1em;
   border-top-right-radius: 1em;
   object-fit: cover;
@@ -417,6 +417,7 @@
   border-radius: 1em;
   position: relative;
   overflow: hidden;
+  width: 280px;
 }
 .blog:hover {
   -webkit-transition: box-shadow 0.5s ease-out;
@@ -430,6 +431,13 @@
   contain: content;
   background-size: 100%;
   border-radius: 1em 1em 0em 0em;
+}
+.blog-title {
+  font-size: 24px;
+  font-weight: 500;
+}
+.blog:hover .blog-title {
+  color: var(--theme-color);
 }
 
 .blog .blog-img .blog-category {
@@ -476,7 +484,7 @@
   background-color: var(--theme-color);
   color: white;
   width: 100%;
-  border-radius: 5px;
+  border-radius: 1rem;
   padding: 5px 25px;
   transition: all 0.3s ease-in-out;
 }
