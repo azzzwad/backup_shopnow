@@ -112,15 +112,18 @@
 .product-item {
   position: relative;
   width: 200px;
-  height: 300px;
-  /* border-radius: 1em; */
-  transition: all 0.3s ease 0s;
+  /* height: 350px; */
+
+  border-radius: 1em;
+  /* transition: all 10s ease; */
+  /* margin-bottom: 30px; */
 }
 .product-item:hover {
   box-shadow: 0px 8px 13px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-in-out;
 }
 .product-item:hover img {
-  transform: scale(1.05);
+  transform: scaleY(1.02);
 }
 .product-img img {
   width: 100%;
@@ -130,27 +133,93 @@
   object-fit: cover;
 }
 .product-info {
-  background: #f6f6f6 none repeat scroll 0 0;
-  padding: 20px 15px;
+  background: white none repeat scroll 0 0;
+  padding: 0px 35px 10px 35px;
+  margin-bottom: -28px;
+  border-radius: 1em;
 }
 .brand-name {
   color: #666666;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 500;
 }
 .product-title {
+  font-size: 18px;
   color: var(--theme-color);
   font-weight: 600;
-  margin-top: 15px;
+  /* margin-top: 15px; */
   overflow: hidden;
   text-overflow: ellipsis;
   text-transform: uppercase;
   white-space: nowrap;
+  /* line-height: 25px; */
 }
 .product-price {
   font-size: 16px;
   font-weight: 600;
   color: rgb(77, 77, 77);
+}
+
+.action-button {
+  text-align: center;
+}
+.action-button > li {
+  display: inline-block;
+  margin-right: 10px;
+}
+.action-button > li:last-child {
+  margin-right: 0;
+}
+.action-button > li > a {
+  background: transparent;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  color: #999999;
+  display: block;
+  font-size: 24px;
+  height: 30px;
+  line-height: 28px;
+  text-align: center;
+  width: 30px;
+}
+.action-button > li:hover > a {
+  background: #ff7f00;
+  border-color: #ff7f00;
+  color: #fff;
+}
+
+.product-item .action-button {
+  background: #ffffff none repeat scroll 0 0;
+  border-radius: 0 0 1em 1em;
+  border-top: 2px solid #f6f6f6;
+  bottom: 0;
+  opacity: 0;
+  padding: 10px;
+  position: static;
+  transition: all 0.3s ease 0s;
+  visibility: hidden;
+  width: 100%;
+}
+.product-item .action-button > li > a {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  border: medium none;
+}
+.product-item .action-button > li:hover > a {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  color: #ff7f00;
+}
+.product-item:hover {
+  box-shadow: 0 5px 2px rgba(0, 0, 0, 0.15);
+  top: -10px;
+}
+.product-item:hover .product-info {
+  border-radius: 0;
+}
+.product-item:hover .action-button {
+  bottom: -200px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Category Poster */
