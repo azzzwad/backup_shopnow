@@ -1,173 +1,273 @@
 <main>
-  <div class="col-md-8 view-holder">
+  <div class="col-md-12">
     <div class="row">
-      <div class="col-md-1 text-center">
-        <a (click)="twoGridView()">
-          <i class="fa fa-th fa-2x grid-view-button"></i>
-        </a>
-      </div>
-      <div class="col-md-1">
-        <a (click)="listView()">
-          <i class="fa fa-list fa-2x list-view-button"></i>
-        </a>
-      </div>
-      <div class="col-md-1" *ngIf="gridview == true">
-        <a (click)="threeGridView()">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRw2ZWOAwrFDAGOJq7lJ1uy-6WQOA4PiMZWBA&usqp=CAU"
-            alt=""
-            style="max-height: 28px; width: 28px"
-          />
-        </a>
-      </div>
-      <div class="col-md-1" *ngIf="gridview == true">
-        <a (click)="fourGridView()">
-          <img
-            src="https://i.pinimg.com/736x/4a/fb/66/4afb660219c6733412f9b8b802a48692.jpg"
-            alt=""
-            style="max-height: 28px; width: 28px"
-          />
-        </a>
-      </div>
-    </div>
-  </div>
-  <!-- List View -->
+      <div class="col-md-2">
+        <div class="col-md-12 price-sidebar">
+          <div class="section-title">
+            <h3>
+              <span> Price </span>
+            </h3>
+          </div>
+          <div class="col-md-12">
+            <!-- <mat-card class="example-result-card">
+              <mat-card-content>
+                <h2>Result</h2>
+                <br />
+                <br />
 
-  <div class="col-md-8 list-view" *ngIf="listview == true">
-    <ol style="padding: 0">
-      <li
-        class="list-line"
-        *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
-      >
-        <div class="col-md-12 list-product">
-          <div class="row">
-            <div class="col-md-2">
-              <img
-                class="list-product-img"
-                src="https://mageblueskytech.com/dukamarket/media/catalog/product/cache/f3ed34011b1107beefe2c20312054a83/3/0/x30_1.jpg.pagespeed.ic.pj33f2Ut1A.webp"
-                alt=""
+                <div
+                  class="example-label-container"
+                  [class]="
+                    vertical
+                      ? 'example-label-vertical'
+                      : 'example-label-horizontal'
+                  "
+                >
+                  <label id="example-name-label" class="example-name-label"
+                    >Max Value</label
+                  >
+                  <label class="example-value-label">{{ value }}</label>
+                </div>
+                <mat-slider
+                  class="example-margin"
+                  [disabled]="disabled"
+                  [invert]="invert"
+                  [max]="max"
+                  [min]="min"
+                  [step]="step"
+                  [thumbLabel]="thumbLabel"
+                  [tickInterval]="getSliderTickInterval()"
+                  [(ngModel)]="value"
+                  [vertical]="vertical"
+                  aria-labelledby="example-name-label"
+                >
+                </mat-slider>
+              </mat-card-content>
+            </mat-card> -->
+          </div>
+        </div>
+        <div class="col-md-12 cat-sidebar">
+          <div class="section-title">
+            <h3>
+              <span> Product Brand </span>
+            </h3>
+          </div>
+          <div>
+            <p>Also look up in</p>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="defaultCheck1"
               />
+              <label class="form-check-label" for="defaultCheck1">
+                Top Selling Products
+              </label>
             </div>
-            <div class="col-md-8" style="padding: 25px 0px 25px 15px">
-              <h3 class="list-product-name">Powered Quad Camera and Android</h3>
-              <p class="list-product-description">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Quibusdam dolore sapiente inventore ex non facilis dolorum,
-                blanditiis aut eveniet officia maxime nam perferendis culpa
-                optio necessitatibus ratione corrupti saepe ipsa.
-              </p>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="defaultCheck1"
+              />
+              <label class="form-check-label" for="defaultCheck1">
+                Top Selling Products
+              </label>
             </div>
-            <div class="col-md-2">
-              <p class="list-product-availability">
-                Availability:
-                <span>
-                  <small style="color: var(--theme-color)">In Stock</small>
-                </span>
-              </p>
-              <h4 class="list-product-price">BDT 50000</h4>
-              <button class="list-product-wishlist">
-                <i class="fa fa-heart"></i> Wish List
-              </button>
-              <button class="list-product-cart">ADD TO CART</button>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="defaultCheck1"
+              />
+              <label class="form-check-label" for="defaultCheck1">
+                Top Selling Products
+              </label>
             </div>
           </div>
         </div>
-      </li>
-    </ol>
-  </div>
-  <!-- Grid Views -->
-  <!-- 2 column grid -->
-
-  <div class="col-md-8" *ngIf="twogridview == true">
-    <div class="col-md-12 two-grid-view">
-      <div
-        class="col-md-6 two-line"
-        *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
-      >
-        <div>
-          <img
-            class="two-grid-image"
-            src="https://mageblueskytech.com/dukamarket/media/catalog/product/cache/f3ed34011b1107beefe2c20312054a83/1/5/x15_1.jpg.pagespeed.ic.NrQ2jMqiJ9.webp"
-            alt=""
-          />
+      </div>
+      <div class="col-md-10">
+        <div class="col-md-12 view-holder">
+          <div class="row">
+            <div class="col-md-1 text-center">
+              <a (click)="twoGridView()">
+                <i class="fa fa-th fa-2x grid-view-button"></i>
+              </a>
+            </div>
+            <div class="col-md-1">
+              <a (click)="listView()">
+                <i class="fa fa-list fa-2x list-view-button"></i>
+              </a>
+            </div>
+            <div class="col-md-1" *ngIf="gridview == true">
+              <a (click)="threeGridView()">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRw2ZWOAwrFDAGOJq7lJ1uy-6WQOA4PiMZWBA&usqp=CAU"
+                  alt=""
+                  style="max-height: 28px; width: 28px"
+                />
+              </a>
+            </div>
+            <div class="col-md-1" *ngIf="gridview == true">
+              <a (click)="fourGridView()">
+                <img
+                  src="https://i.pinimg.com/736x/4a/fb/66/4afb660219c6733412f9b8b802a48692.jpg"
+                  alt=""
+                  style="max-height: 28px; width: 28px"
+                />
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="two-grid-product-info text-center">
-          <h3 class="two-grid-name">Sony Series Stereo Headphones</h3>
-          <p class="two-grid-price">BDT 45000</p>
-          <!-- <button class="two-grid-wishlist">
+        <!-- List View -->
+
+        <div class="col-md-12 list-view" *ngIf="listview == true">
+          <ol style="padding: 0">
+            <li
+              class="list-line"
+              *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
+            >
+              <div class="col-md-12 list-product">
+                <div class="row">
+                  <div class="col-md-2">
+                    <img
+                      class="list-product-img"
+                      src="https://mageblueskytech.com/dukamarket/media/catalog/product/cache/f3ed34011b1107beefe2c20312054a83/3/0/x30_1.jpg.pagespeed.ic.pj33f2Ut1A.webp"
+                      alt=""
+                    />
+                  </div>
+                  <div class="col-md-8" style="padding: 25px 0px 25px 15px">
+                    <h3 class="list-product-name">
+                      Powered Quad Camera and Android
+                    </h3>
+                    <p class="list-product-description">
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                      Quibusdam dolore sapiente inventore ex non facilis
+                      dolorum, blanditiis aut eveniet officia maxime nam
+                      perferendis culpa optio necessitatibus ratione corrupti
+                      saepe ipsa.
+                    </p>
+                  </div>
+                  <div class="col-md-2">
+                    <p class="list-product-availability">
+                      Availability:
+                      <span>
+                        <small style="color: var(--theme-color)"
+                          >In Stock</small
+                        >
+                      </span>
+                    </p>
+                    <h4 class="list-product-price">BDT 50000</h4>
+                    <button class="list-product-wishlist">
+                      <i class="fa fa-heart"></i> Wish List
+                    </button>
+                    <button class="list-product-cart">ADD TO CART</button>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ol>
+        </div>
+        <!-- Grid Views -->
+        <!-- 2 column grid -->
+
+        <div class="col-md-12" *ngIf="twogridview == true">
+          <div class="col-md-12 two-grid-view">
+            <div
+              class="col-md-6 two-line"
+              *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
+            >
+              <div>
+                <img
+                  class="two-grid-image"
+                  src="https://mageblueskytech.com/dukamarket/media/catalog/product/cache/f3ed34011b1107beefe2c20312054a83/1/5/x15_1.jpg.pagespeed.ic.NrQ2jMqiJ9.webp"
+                  alt=""
+                />
+              </div>
+              <div class="two-grid-product-info text-center">
+                <h3 class="two-grid-name">Sony Series Stereo Headphones</h3>
+                <p class="two-grid-price">BDT 45000</p>
+                <!-- <button class="two-grid-wishlist">
           <i class="fa fa-heart"></i> Wishlist
         </button> -->
-          <button class="two-grid-cart">ADD TO CART</button>
+                <button class="two-grid-cart">ADD TO CART</button>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-  <!-- 3 column grid -->
+        <!-- 3 column grid -->
 
-  <div class="col-md-8" *ngIf="threegridview == true">
-    <div class="col-md-12 two-grid-view">
-      <div
-        class="col-md-4 two-line"
-        *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
-      >
-        <div>
-          <img
-            class="three-grid-img"
-            src="https://mageblueskytech.com/dukamarket/media/catalog/product/cache/f3ed34011b1107beefe2c20312054a83/1/5/x15_1.jpg.pagespeed.ic.NrQ2jMqiJ9.webp"
-            alt=""
-          />
-        </div>
-        <div class="two-grid-product-info text-center">
-          <h3 class="two-grid-name">Sony Series Stereo Headphones</h3>
-          <p class="two-grid-price">BDT 45000</p>
-          <!-- <button class="two-grid-wishlist">
+        <div class="col-md-12" *ngIf="threegridview == true">
+          <div class="col-md-12 two-grid-view">
+            <div
+              class="col-md-4 two-line"
+              *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
+            >
+              <div>
+                <img
+                  class="three-grid-img"
+                  src="https://mageblueskytech.com/dukamarket/media/catalog/product/cache/f3ed34011b1107beefe2c20312054a83/1/5/x15_1.jpg.pagespeed.ic.NrQ2jMqiJ9.webp"
+                  alt=""
+                />
+              </div>
+              <div class="two-grid-product-info text-center">
+                <h3 class="two-grid-name">Sony Series Stereo Headphones</h3>
+                <p class="two-grid-price">BDT 45000</p>
+                <!-- <button class="two-grid-wishlist">
           <i class="fa fa-heart"></i> Wishlist
         </button> -->
-          <button class="two-grid-cart">ADD TO CART</button>
+                <button class="two-grid-cart">ADD TO CART</button>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- 4 column grid -->
+        <!-- 4 column grid -->
 
-  <div class="col-md-8" *ngIf="fourgridview == true">
-    <div class="col-md-12 two-grid-view">
-      <div
-        class="col-md-3 two-line"
-        *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
-      >
-        <div>
-          <img
-            class="four-grid-img"
-            src="https://mageblueskytech.com/dukamarket/media/catalog/product/cache/f3ed34011b1107beefe2c20312054a83/1/5/x15_1.jpg.pagespeed.ic.NrQ2jMqiJ9.webp"
-            alt=""
-          />
-        </div>
-        <div class="two-grid-product-info text-center">
-          <h3 class="four-grid-name">Sony Series Stereo Headphones</h3>
-          <p class="two-grid-price">BDT 45000</p>
-          <!-- <button class="two-grid-wishlist">
+        <div class="col-md-12" *ngIf="fourgridview == true">
+          <div class="col-md-12 two-grid-view">
+            <div
+              class="col-md-3 two-line"
+              *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
+            >
+              <div>
+                <img
+                  class="four-grid-img"
+                  src="https://mageblueskytech.com/dukamarket/media/catalog/product/cache/f3ed34011b1107beefe2c20312054a83/1/5/x15_1.jpg.pagespeed.ic.NrQ2jMqiJ9.webp"
+                  alt=""
+                />
+              </div>
+              <div class="two-grid-product-info text-center">
+                <h3 class="four-grid-name">Sony Series Stereo Headphones</h3>
+                <p class="two-grid-price">BDT 45000</p>
+                <!-- <button class="two-grid-wishlist">
             <i class="fa fa-heart"></i> Wishlist
           </button> -->
-          <button class="two-grid-cart">ADD TO CART</button>
+                <button class="two-grid-cart">ADD TO CART</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </main>
 <!-- Button trigger modal -->
-<button
+<!-- <button
   type="button"
   class="btn btn-primary"
   data-bs-toggle="modal"
   data-bs-target="#exampleModal"
 >
   Launch demo modal
-</button>
+</button> -->
 
 <!-- Modal -->
-<div
+<!-- <div
   class="modal fade"
   id="exampleModal"
   tabindex="-1"
@@ -194,4 +294,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->

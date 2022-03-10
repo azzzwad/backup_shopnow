@@ -6,16 +6,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./category.component.css'],
 })
 export class CategoryComponent implements OnInit {
+  // Product View Handle
   gridview: boolean;
   listview: boolean = true;
   twogridview: boolean;
   threegridview: boolean;
   fourgridview: boolean;
 
+  // Price Range
+  autoTicks = false;
+  disabled = false;
+  invert = false;
+  max = 100;
+  min = 0;
+  showTicks = false;
+  step = 1;
+  thumbLabel = false;
+  value = 0;
+  vertical = false;
+  tickInterval = 1;
+
   constructor() {}
 
   ngOnInit(): void {}
-
+  // product view handle functions
   gridView() {}
 
   listView() {
@@ -45,5 +59,13 @@ export class CategoryComponent implements OnInit {
     this.twogridview = false;
     this.threegridview = false;
     this.fourgridview = true;
+  }
+
+  getSliderTickInterval(): number | 'auto' {
+    if (this.showTicks) {
+      return this.autoTicks ? 'auto' : this.tickInterval;
+    }
+
+    return 0;
   }
 }
