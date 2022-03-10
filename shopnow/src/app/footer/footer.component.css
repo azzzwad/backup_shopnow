@@ -1,0 +1,14 @@
+.footer-item h3 {
+  color: white;
+  font-size: 18px;
+}
+
+.footer-item ul > li {
+  color: white;
+}
+.footer-item ul li:hover a {
+  color: var(--theme-color-light);
+  cursor: pointer;
+  margin-left: 10px;
+  transition: all ease-in-out 0.3s;
+}
