@@ -1,1 +1,150 @@
-<p>signup works!</p>
+<main>
+  <div class="col-md-12 col-sm-12 col-xs-12 auth-body">
+    <form [formGroup]="signUpForm" action="">
+      <div class="form-floating mb-3">
+        <input
+          type="email"
+          class="form-control"
+          id="signupemail"
+          formControlName="email"
+          placeholder="name@example.com"
+        />
+        <label for="signupemail" style="color: var(--white-color)"
+          >Email address</label
+        >
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          type="tel"
+          class="form-control"
+          id="signupmb"
+          formControlName="mobile"
+          placeholder="+8801711111111"
+        />
+        <label for="signupemail" style="color: var(--white-color)"
+          >Mobile</label
+        >
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          type="password"
+          class="form-control"
+          id="signuppw"
+          formControlName="password"
+          placeholder="Password"
+        />
+        <label for="signuppw" style="color: var(--white-color)">Password</label>
+      </div>
+      <div class="form-floating">
+        <input
+          type="password"
+          class="form-control"
+          id="repw"
+          formControlName="repassword"
+          placeholder="Password"
+        />
+        <label for="repw" style="color: var(--white-color)"
+          >Verify Password</label
+        >
+      </div>
+    </form>
+
+    <br />
+    <h6>Account Type</h6>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="col-md-12 btn role-button" style="">Retailer</div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="col-md-12 btn role-button" style="">Customer</div>
+      </div>
+    </div>
+    <br />
+    <div id="recaptcha-container"></div>
+    <button class="col-md-12 signup-btn" style="">Sign Up</button>
+    <br />
+    <div class="row">
+      <div class="col-5"><hr /></div>
+      <div class="col-2" style="text-align: center; margin-top: 15px">
+        <h3>OR</h3>
+      </div>
+      <div class="col-5"><hr /></div>
+    </div>
+    <br />
+    <div class="btn-group" style="width: 100%; border-radius: 10px">
+      <button class="btn" style="background-color: #3b5998; box-shadow: none">
+        <i class="fa fa-facebook" style="color: white"></i>
+      </button>
+      <button class="btn fb-btn" style="">
+        Sign up with <strong>Facebook</strong>
+      </button>
+    </div>
+    <br />
+    <br />
+
+    <div class="btn-group" style="width: 100%; border-radius: 10px">
+      <button class="btn" style="background-color: #db4437; box-shadow: none">
+        <i class="fa fa-google" style="color: white"></i>
+      </button>
+      <button class="btn gl-btn">Sign up with <strong>Google</strong></button>
+    </div>
+    <br />
+    <br />
+    <div class="row">
+      <div class="col-5"><hr /></div>
+      <div class="col-2" style="text-align: center; margin-top: 15px">
+        <h3>OR</h3>
+      </div>
+      <div class="col-5"><hr /></div>
+    </div>
+    <br />
+    <br />
+    <button
+      class="signin-btn"
+      style="width: 100%; box-shadow: none; border-radius: 10px"
+    >
+      Sign In
+    </button>
+
+    <br />
+    <br />
+  </div>
+
+  <!-- OTP Modal -->
+  <button
+    #otpModal
+    data-toggle="modal"
+    data-target="#otp_Modal"
+    hidden
+  ></button>
+
+  <div
+    class="modal fade call-modal"
+    id="otp_Modal"
+    tabindex="-1"
+    role="dialog"
+    data-backdrop="static"
+  >
+    <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <form [formGroup]="otpForm" autocomplete="off">
+            <input
+              type="text"
+              autocomplete="off"
+              class="form-control"
+              placeholder="Enter OTP"
+              formControlName="otp"
+              style="color: white"
+            />
+            <br />
+            <button class="btn button-theme" style="width: 100%">
+              Confirm
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

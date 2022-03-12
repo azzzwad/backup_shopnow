@@ -1,0 +1,57 @@
+.role-button {
+  border: 1px solid var(--theme-color-light);
+  background-color: transparent;
+
+  color: var(--theme-color-light);
+  width: 100%;
+  border-radius: 1em;
+}
+.role-button:hover {
+  background-color: var(--theme-color-light);
+  color: white;
+}
+.signup-btn {
+  border: none;
+  background-color: var(--theme-color-light);
+  border-radius: 2em;
+  padding: 10px 0px 10px 0px;
+  font-size: 20px;
+
+  color: white;
+}
+.signup-btn:hover {
+  background-color: var(--theme-color);
+}
+
+.fb-btn {
+  width: 80%;
+  background-color: #5e80c7;
+  color: white;
+  box-shadow: none;
+}
+
+.fb-btn:hover {
+  background-color: #3b5998;
+}
+.gl-btn {
+  width: 80%;
+  background-color: #db6f65;
+  color: white;
+  box-shadow: none;
+}
+
+.gl-btn:hover {
+  background-color: #db4437;
+}
+.signin-btn {
+  border: none;
+  background-color: var(--theme-color-light);
+  border-radius: 2em;
+  padding: 10px 0px 10px 0px;
+  font-size: 20px;
+
+  color: white;
+}
+.signin-btn:hover {
+  background-color: var(--theme-color);
+}
