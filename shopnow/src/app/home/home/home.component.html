@@ -3,7 +3,7 @@
   <div class="col-md-12">
     <div class="row">
       <!-- Slider Portion -->
-      <div class="col-md-7">
+      <div class="col-md-7 col-sm-12 col-xs-12">
         <ngb-carousel
           #carousel
           [interval]="3000"
@@ -28,10 +28,10 @@
         </ngb-carousel>
       </div>
       <!-- Banner Portion -->
-      <div class="col-md-5">
+      <div class="col-md-5 col-sm-12 col-xs-12">
         <div class="col-md-12">
           <div class="row">
-            <div class="col-md-6 banner-poster">
+            <div class="col-md-6 col-sm-12 col-xs-12 banner-poster">
               <div class="banner-poster-content">
                 <span>
                   <h3>Canyon Star Raider</h3>
@@ -39,7 +39,7 @@
                 </span>
               </div>
             </div>
-            <div class="col-md-6 banner-poster">
+            <div class="col-md-6 col-sm-12 col-xs-12 banner-poster">
               <div class="banner-poster-content">
                 <span>
                   <h3>Canyon Star Raider</h3>
@@ -47,7 +47,7 @@
                 </span>
               </div>
             </div>
-            <div class="col-md-6 banner-poster">
+            <div class="col-md-6 col-sm-12 col-xs-12 banner-poster">
               <div class="banner-poster-content">
                 <span>
                   <h3>Canyon Star Raider</h3>
@@ -55,7 +55,7 @@
                 </span>
               </div>
             </div>
-            <div class="col-md-6 banner-poster">
+            <div class="col-md-6 col-sm-12 col-xs-12 banner-poster">
               <div class="banner-poster-content">
                 <span>
                   <h3>Canyon Star Raider</h3>
@@ -77,10 +77,10 @@
       <span>Hot Trending Products</span>
     </h3>
   </div>
-  <div class="col-md-12">
+  <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="row">
       <div
-        class="col-md-1"
+        class="col-md-1 col-sm-12 col-xs-12"
         *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8]"
         style="margin: 0px 5em 2em 0px"
       >
@@ -129,9 +129,12 @@
       <span>Popular Categories</span>
     </h3>
   </div>
-  <div class="col-md-12">
+  <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="row">
-      <div class="col-md-2" *ngFor="let item of [1, 2, 3, 4, 5, 6]">
+      <div
+        class="col-md-2 col-xs-12 col-sm-12"
+        *ngFor="let item of [1, 2, 3, 4, 5, 6]"
+      >
         <div class="category-poster">
           <div class="category-info">
             <span>
@@ -206,9 +209,9 @@
     </div>
   </div>
   <!-- large flash poster -->
-  <div class="col-md-12" style="margin-bottom: 100px">
+  <div class="col-md-12 col-sm-12 col-xs-12" style="margin-bottom: 100px">
     <div class="row">
-      <div class="col-md-4" *ngFor="let item of [1, 2, 3]">
+      <div class="col-md-4 col-sm-12 col-xs-12" *ngFor="let item of [1, 2, 3]">
         <div class="flash-poster-large">
           <span>
             <h3 class="flash-title">Microsoft Surface Laptop 14"</h3>
@@ -309,10 +312,10 @@
       <span>Recommended For You</span>
     </h3>
   </div>
-  <div class="col-md-12">
+  <div class="col-md-12 col-sm-12 col-xs-12" style="margin-top: 100px">
     <div class="row">
       <div
-        class="col-md-1"
+        class="col-md-1 col-sm-12 col-xs-12"
         *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8]"
         style="margin: 0px 5em 2em 0px"
       >
@@ -360,9 +363,12 @@
       <span>From the Blog</span>
     </h3>
   </div>
-  <div class="col-md-12">
+  <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="row">
-      <div class="col-md-2" *ngFor="let item of [1, 2, 3, 4, 5, 6]">
+      <div
+        class="col-md-2 col-sm-12 col-xs-12"
+        *ngFor="let item of [1, 2, 3, 4, 5, 6]"
+      >
         <div class="blog" style="margin-right: 10px">
           <div class="col-md-12 blog-img">
             <button class="blog-category">Audio</button>
