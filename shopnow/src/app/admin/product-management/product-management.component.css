@@ -1,0 +1,129 @@
+.product-item {
+  position: relative;
+  width: 200px;
+  transition: 0.3s all ease-in-out;
+  /* height: 350px; */
+
+  border-radius: 1em;
+  /* transition: 0.5s all ease-out 0.2s; */
+
+  /* transition: all 10s ease; */
+  /* margin-bottom: 30px; */
+}
+
+.product-item:hover img {
+  transform: scaleY(1.02);
+  transition: 0.3s all ease-in-out;
+}
+.product-img img {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+  object-fit: cover;
+}
+.product-info {
+  background: white none repeat scroll 0 0;
+  padding: 0px 35px 10px 35px;
+  margin-bottom: -28px;
+  border-radius: 1em;
+  /* transition: all 3s ease; */
+}
+.brand-name {
+  color: #666666;
+  font-size: 18px;
+  font-weight: 500;
+}
+.product-title {
+  font-size: 18px;
+  color: var(--theme-color);
+  font-weight: 600;
+  /* margin-top: 15px; */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+  /* line-height: 25px; */
+}
+.product-price {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgb(77, 77, 77);
+}
+
+.action-button {
+  text-align: center;
+}
+.action-button > li {
+  display: inline-block;
+  margin-right: 10px;
+}
+.action-button > li:last-child {
+  margin-right: 0;
+}
+.action-button > li > a {
+  background: transparent;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  color: #999999;
+  display: block;
+  font-size: 24px;
+  height: 30px;
+  line-height: 28px;
+  text-align: center;
+  width: 30px;
+}
+.action-button > li:hover > a {
+  background: var(--theme-color);
+  border-color: var(--theme-color);
+  color: #fff;
+}
+
+.product-item .action-button {
+  background: #ffffff none repeat scroll 0 0;
+  border-radius: 0 0 1em 1em;
+  border-top: 2px solid #f6f6f6;
+  bottom: 0;
+  opacity: 0;
+  padding: 10px;
+  position: static;
+
+  visibility: hidden;
+  width: 100%;
+}
+.product-item .action-button > li > a {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  border: medium none;
+}
+.product-item .action-button > li:hover > a {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  color: var(--theme-color);
+}
+.product-item:hover {
+  box-shadow: 0 5px 2px rgba(0, 0, 0, 0.15);
+  top: -10px;
+  transition: 0.3s all ease-in-out;
+}
+.product-item:hover .product-info {
+  border-radius: 0;
+}
+.product-item:hover .action-button {
+  bottom: -200px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease-in-out;
+}
+
+/* upload product modal */
+.modal-image {
+  object-fit: cover;
+}
+.modal-name {
+  font-size: 26px;
+  font-weight: 500;
+  color: var(--theme-color);
+}
+.modal-price {
+  font-size: 20px;
+}

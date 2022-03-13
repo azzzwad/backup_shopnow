@@ -1,0 +1,229 @@
+<main>
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="section-title text-center">
+      <h3>
+        <span>Product Management </span>
+        <br />
+        <br />
+        <span
+          ><a
+            type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#ProductUploadModal"
+            ><i class="zmdi zmdi-file-add"></i></a
+        ></span>
+      </h3>
+    </div>
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="row">
+        <div
+          class="col-md-1 col-sm-12 col-xs-12"
+          *ngFor="
+            let item of [
+              1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
+              20
+            ]
+          "
+          style="margin: 0px 5em 2em 0px"
+        >
+          <div class="product-item product-item-2 list-product">
+            <div class="product-img">
+              <a>
+                <img
+                  src="https://mageblueskytech.com/dukamarket/media/catalog/product/cache/e056f2085c1b5fe6902b0a5e86573793/3/0/x30_1.jpg.pagespeed.ic._8B_ECWiga.jpg"
+                  alt=""
+                />
+              </a>
+            </div>
+            <div class="product-info">
+              <h6 class="product-title">
+                <a>N70</a>
+              </h6>
+              <h6 class="brand-name">Nokia</h6>
+              <h3 class="pro-price">$ 869.00</h3>
+            </div>
+            <ul class="action-button">
+              <li>
+                <a
+                  type="button"
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#QuickviewModal"
+                  ><i class="zmdi zmdi-zoom-in"></i
+                ></a>
+              </li>
+              <br />
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<!-- Quickview Modal -->
+<div
+  class="modal fade"
+  id="QuickviewModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add a Product</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-6">
+              <img
+                class="modal-image"
+                src="https://mageblueskytech.com/dukamarket/media/catalog/product/cache/e056f2085c1b5fe6902b0a5e86573793/3/0/x30_1.jpg.pagespeed.ic._8B_ECWiga.jpg"
+                alt=""
+              />
+            </div>
+            <div class="col-md-6">
+              <h3 class="modal-name">Product Name</h3>
+              <p class="modal-price">Price</p>
+              <p class="modal-desc">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel
+                animi quos debitis laborum illo quisquam voluptas, unde
+                expedita, corporis impedit omnis quis velit minima iste dicta
+                tempora reprehenderit. Quos, eaque!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Upload Product Form -->
+<div
+  class="modal fade"
+  id="ProductUploadModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5
+          class="modal-title text-center"
+          id="exampleModalLabel"
+          style="color: var(--theme-color); font-size: 24px; font-weight: 500"
+        >
+          Add a Product
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="product-image" style="margin-bottom: 10px; border: none">
+            <input
+              class="form-control"
+              type="file"
+              formControlName="product_image"
+              accept="image/*"
+            />
+          </div>
+          <div class="product-title" style="margin-bottom: 15px">
+            <input
+              class="form-control"
+              type="text"
+              formControlName="product_title"
+              placeholder="Enter Your Product Title"
+            />
+          </div>
+          <div class="dropdown mt-10" style="margin-bottom: 15px">
+            <select class="form-control">
+              <option value="">Select a Category</option>
+              <option value="">
+                <p class="text-muted">Category 1</p>
+              </option>
+              <option value="">
+                <p class="text-muted">Category 1</p>
+              </option>
+              <option value="">
+                <p class="text-muted">Category 1</p>
+              </option>
+              <option value="">
+                <p class="text-muted">Category 1</p>
+              </option>
+              <option value="">
+                <p class="text-muted">Category 1</p>
+              </option>
+            </select>
+          </div>
+
+          <div class="dropdown mt-10" style="margin-bottom: 15px">
+            <select class="form-control">
+              <option value="">Select a SubCategory</option>
+              <option value="">
+                <p class="text-muted">SubCategory 1</p>
+              </option>
+              <option value="">
+                <p class="text-muted">SubCategory 1</p>
+              </option>
+              <option value="">
+                <p class="text-muted">SubCategory 1</p>
+              </option>
+              <option value="">
+                <p class="text-muted">SubCategory 1</p>
+              </option>
+              <option value="">
+                <p class="text-muted">SubCategory 1</p>
+              </option>
+            </select>
+          </div>
+          <div class="product-price" style="margin-bottom: 15px">
+            <input
+              class="form-control"
+              type="text"
+              formControlName="product_price"
+              placeholder="Enter Your Product Price"
+            />
+          </div>
+          <div class="product-description" style="margin-bottom: 15px">
+            <textarea
+              class="form-control"
+              name=""
+              id=""
+              cols="120"
+              rows="5"
+              formControlName="product_description"
+              placeholder="Enter Your Product Description"
+            ></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
