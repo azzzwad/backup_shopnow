@@ -30,8 +30,8 @@
       <br />
 
       <a
-        data-toggle="modal"
-        data-target="#reviewModal"
+        data-bs-toggle="modal"
+        data-bs-target="#reviewModal"
         style="
           color: grey;
           text-decoration: none;
@@ -101,7 +101,6 @@
       <button
         class="btn btn-outline-secondary"
         style="width: 100%; box-shadow: none; border-radius: 10px"
-        (click)="switch()"
       >
         Sign Up
       </button>
@@ -111,3 +110,52 @@
     </div>
   </div>
 </main>
+
+<div
+  class="modal fade call-modal"
+  id="reviewModal"
+  tabindex="-1"
+  role="dialog"
+  data-bs-backdrop="static"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="border-radius: 30px">
+      <div class="modal-body">
+        <div class="modal-header text-center">
+          <h4>Forgot password</h4>
+          <button
+            #forgotModal
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            style="color: black; outline: none; border: none"
+          >
+            &times;
+          </button>
+        </div>
+        <form [formGroup]="signInForm">
+          <div class="form-floating mb-3">
+            <input
+              type="email"
+              class="form-control"
+              id="fe"
+              placeholder="name@example.com"
+              formControlName="email"
+            />
+            <label for="fe" style="color: var(--white-color)"
+              >Email address</label
+            >
+          </div>
+          <br />
+          <button
+            class="btn btn-secondary"
+            style="width: 100%"
+            (click)="sendForgotRequest()"
+          >
+            Send request
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

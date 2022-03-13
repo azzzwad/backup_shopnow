@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import firebase from 'firebase';
@@ -11,6 +11,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./signin.component.css'],
 })
 export class SigninComponent implements OnInit {
+  @ViewChild('forgotModal', { static: true }) forgotModal: ElementRef;
   public signInForm: FormGroup;
   constructor(
     private _fb: FormBuilder,
