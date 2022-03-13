@@ -134,10 +134,13 @@
   </div>
 
   <!-- OTP Modal -->
+
   <button
+    type="button"
     #otpModal
-    data-toggle="modal"
-    data-target="#otp_Modal"
+    data-bs-toggle="modal"
+    data-bs-target="#otp_Modal"
+    style="width: 100%"
     hidden
   ></button>
 
@@ -158,7 +161,7 @@
               class="form-control"
               placeholder="Enter OTP"
               formControlName="otp"
-              style="color: white"
+              style="color: black"
             />
             <br />
             <button

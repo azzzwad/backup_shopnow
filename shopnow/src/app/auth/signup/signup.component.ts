@@ -129,7 +129,9 @@ export class SignupComponent implements OnInit {
       .then((result) => {
         // this.spinner.hide();
         this.windowRef.confirmationResult = result;
+        console.log(result);
         this.otpModal.nativeElement.click();
+        console.log(this.otpModal);
       })
       .catch((error) => {
         // this.spinner.hide();
