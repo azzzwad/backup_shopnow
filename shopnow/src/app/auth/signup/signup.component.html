@@ -1,119 +1,125 @@
 <main>
-  <div class="col-md-12 col-sm-12 col-xs-12 auth-body" id="auth-body">
-    <form [formGroup]="signUpForm">
-      <div class="form-floating mb-3">
-        <input
-          type="email"
-          class="form-control"
-          id="signupemail"
-          formControlName="email"
-          placeholder="name@example.com"
-        />
-        <label for="signupemail" style="color: var(--white-color)"
-          >Email address</label
-        >
-      </div>
-      <div class="form-floating mb-3">
-        <input
-          type="tel"
-          class="form-control"
-          id="signupmb"
-          formControlName="mobile"
-          placeholder="+8801711111111"
-        />
-        <label for="signupemail" style="color: var(--white-color)"
-          >Mobile</label
-        >
-      </div>
-      <div class="form-floating mb-3">
-        <input
-          type="password"
-          class="form-control"
-          id="signuppw"
-          formControlName="password"
-          placeholder="Password"
-        />
-        <label for="signuppw" style="color: var(--white-color)">Password</label>
-      </div>
-      <div class="form-floating">
-        <input
-          type="password"
-          class="form-control"
-          id="repw"
-          formControlName="repassword"
-          placeholder="Password"
-        />
-        <label for="repw" style="color: var(--white-color)"
-          >Verify Password</label
-        >
-      </div>
-    </form>
+  <div class="row">
+    <div class="col-md-6 col-sm-12 col-xs-12 auth-body" id="auth-body">
+      <form [formGroup]="signUpForm">
+        <div class="form-floating mb-3">
+          <input
+            type="email"
+            class="form-control"
+            id="signupemail"
+            formControlName="email"
+            placeholder="name@example.com"
+          />
+          <label for="signupemail" style="color: var(--white-color)"
+            >Email address</label
+          >
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            type="tel"
+            class="form-control"
+            id="signupmb"
+            formControlName="mobile"
+            placeholder="+8801711111111"
+          />
+          <label for="signupemail" style="color: var(--white-color)"
+            >Mobile</label
+          >
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            type="password"
+            class="form-control"
+            id="signuppw"
+            formControlName="password"
+            placeholder="Password"
+          />
+          <label for="signuppw" style="color: var(--white-color)"
+            >Password</label
+          >
+        </div>
+        <div class="form-floating">
+          <input
+            type="password"
+            class="form-control"
+            id="repw"
+            formControlName="repassword"
+            placeholder="Password"
+          />
+          <label for="repw" style="color: var(--white-color)"
+            >Verify Password</label
+          >
+        </div>
+      </form>
 
-    <br />
-    <h6>Account Type</h6>
-    <div class="row">
-      <div class="col-md-6">
-        <div
-          class="col-md-12 btn role-button"
-          [class.button-theme]="signUpForm.value.role == 'company'"
-          (click)="selectRole('company')"
-          [class.button-theme]="signUpForm.value.role == 'user'"
-          (click)="selectRole('user')"
-        >
-          Retailer
+      <br />
+      <h6>Account Type</h6>
+      <div class="row">
+        <div class="col-md-6">
+          <div
+            class="col-md-12 btn role-button"
+            [class.button-theme]="signUpForm.value.role == 'company'"
+            (click)="selectRole('company')"
+            [class.button-theme]="signUpForm.value.role == 'user'"
+            (click)="selectRole('user')"
+          >
+            Retailer
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div
+            class="col-md-12 btn role-button"
+            [class.button-theme]="signUpForm.value.role == 'user'"
+            (click)="selectRole('user')"
+          >
+            Customer
+          </div>
         </div>
       </div>
+      <br />
+      <div id="recaptcha-container"></div>
 
-      <div class="col-md-6">
-        <div
-          class="col-md-12 btn role-button"
-          [class.button-theme]="signUpForm.value.role == 'user'"
-          (click)="selectRole('user')"
-        >
-          Customer
+      <br />
+      <button class="col-md-12 signup-btn" (click)="signUp()">Sign Up</button>
+      <br />
+      <div class="row">
+        <div class="col-5"><hr /></div>
+        <br />
+        <div class="col-2" style="text-align: center; margin-top: 15px">
+          <h3>OR</h3>
         </div>
+        <div class="col-5"><hr /></div>
       </div>
-    </div>
-    <br />
-    <div id="recaptcha-container"></div>
-    <button class="col-md-12 signup-btn" (click)="signUp()">Sign Up</button>
-    <br />
-    <div class="row">
-      <div class="col-5"><hr /></div>
-      <div class="col-2" style="text-align: center; margin-top: 15px">
-        <h3>OR</h3>
+      <br />
+      <div class="btn-group" style="width: 100%; border-radius: 10px">
+        <button
+          class="btn"
+          style="background-color: #3b5998; box-shadow: none"
+          (click)="signUpWithFacebook()"
+        >
+          <i class="fa fa-facebook" style="color: white"></i>
+        </button>
+        <button class="btn fb-btn" style="">
+          Sign up with <strong>Facebook</strong>
+        </button>
       </div>
-      <div class="col-5"><hr /></div>
-    </div>
-    <br />
-    <div class="btn-group" style="width: 100%; border-radius: 10px">
-      <button
-        class="btn"
-        style="background-color: #3b5998; box-shadow: none"
-        (click)="signUpWithFacebook()"
-      >
-        <i class="fa fa-facebook" style="color: white"></i>
-      </button>
-      <button class="btn fb-btn" style="">
-        Sign up with <strong>Facebook</strong>
-      </button>
-    </div>
-    <br />
-    <br />
+      <br />
+      <br />
 
-    <div class="btn-group" style="width: 100%; border-radius: 10px">
-      <button
-        class="btn"
-        style="background-color: #db4437; box-shadow: none"
-        (click)="signUpWithGoogle()"
-      >
-        <i class="fa fa-google" style="color: white"></i>
-      </button>
-      <button class="btn gl-btn">Sign up with <strong>Google</strong></button>
-    </div>
-    <br />
-    <br />
-    <div class="row">
+      <div class="btn-group" style="width: 100%; border-radius: 10px">
+        <button
+          class="btn"
+          style="background-color: #db4437; box-shadow: none"
+          (click)="signUpWithGoogle()"
+        >
+          <i class="fa fa-google" style="color: white"></i>
+        </button>
+        <button class="btn gl-btn">Sign up with <strong>Google</strong></button>
+      </div>
+      <br />
+      <br />
+      <!-- <div class="row">
       <div class="col-5"><hr /></div>
       <div class="col-2" style="text-align: center; margin-top: 15px">
         <h3>OR</h3>
@@ -127,12 +133,12 @@
       style="width: 100%; box-shadow: none; border-radius: 10px"
     >
       Sign In
-    </button>
+    </button> -->
 
-    <br />
-    <br />
+      <br />
+      <br />
+    </div>
   </div>
-
   <!-- OTP Modal -->
 
   <button
