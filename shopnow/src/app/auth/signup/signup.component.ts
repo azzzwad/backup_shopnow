@@ -1,9 +1,9 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ToastrService } from 'ngx-toastr';
+
 import { AuthService } from 'src/app/services/auth.service';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
-import { NgxSpinnerService } from 'ngx-spinner';
+
 import firebase from 'firebase';
 import { environment } from 'src/environments/environment';
 @Component({
@@ -25,11 +25,10 @@ export class SignupComponent implements OnInit {
   agree = false;
   constructor(
     private _fb: FormBuilder,
-    private toastr: ToastrService,
 
     private authservice: AuthService,
     private router: Router,
-    private spinner: NgxSpinnerService,
+
     private route: ActivatedRoute
   ) {}
 
@@ -38,11 +37,13 @@ export class SignupComponent implements OnInit {
       firebase.initializeApp(environment.firebaseConfig);
     }
     let body = document.getElementById('auth-body');
-
+    console.log(body);
     if (body) body.style.opacity = '0';
+    // console.log(body.style.opacity);
 
     setTimeout(() => {
       if (body) body.style.opacity = '100%';
+      // console.log(body.style.opacity);
       this.windowRef = window;
       this.windowRef.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
         'recaptcha-container'
@@ -73,14 +74,12 @@ export class SignupComponent implements OnInit {
 
   signUp() {
     if (!this.signUpForm.value.role || this.signUpForm.value.role === '') {
-      this.toastr.warning('Select either USER or COMPANY type', null, {
-        timeOut: 3000,
-      });
+      alert('Select either USER or Retailer type');
       return;
     }
 
     if (!this.authservice.validateEmail(this.signUpForm.value.email)) {
-      this.toastr.warning('Enter correct email!', null, { timeOut: 3000 });
+      alert('Enter correct email!');
       return;
     }
 
@@ -89,7 +88,7 @@ export class SignupComponent implements OnInit {
       this.signUpForm.value.mobile === '' ||
       !this.signUpForm.value.mobile.startsWith('+')
     ) {
-      this.toastr.warning('Enter valid mobile number with full country code');
+      alert('Enter valid mobile number with full country code');
       return;
     }
 
@@ -98,7 +97,7 @@ export class SignupComponent implements OnInit {
       this.signUpForm.value.password === '' ||
       this.signUpForm.value.password.length < 6
     ) {
-      this.toastr.warning('Enter password at least 6 characters long');
+      alert('Enter password at least 6 characters long');
       return;
     }
 
@@ -107,14 +106,14 @@ export class SignupComponent implements OnInit {
       this.signUpForm.value.repassword === '' ||
       this.signUpForm.value.password != this.signUpForm.value.repassword
     ) {
-      this.toastr.warning("Password didn't match, retype passwords again");
+      alert("Password didn't match, retype passwords again");
       return;
     }
 
     const appverifier = this.windowRef.recaptchaVerifier;
 
     if (!appverifier) {
-      this.toastr.error('Please check recaptha');
+      alert('Please check recaptha');
       return;
     }
     //
@@ -128,13 +127,13 @@ export class SignupComponent implements OnInit {
       .auth()
       .signInWithPhoneNumber(this.number, appverifier)
       .then((result) => {
-        this.spinner.hide();
+        // this.spinner.hide();
         this.windowRef.confirmationResult = result;
         this.otpModal.nativeElement.click();
       })
       .catch((error) => {
-        this.spinner.hide();
-        this.toastr.error(error);
+        // this.spinner.hide();
+        alert(error);
       });
   }
 
@@ -145,23 +144,23 @@ export class SignupComponent implements OnInit {
         this.otpForm.value.otp === '' ||
         this.otpForm.value.otp.length < 3
       ) {
-        this.toastr.warning('enter correct OTP');
+        alert('enter correct OTP');
         return;
       }
 
-      await this.spinner.show();
+      // await this.spinner.show();
       this.windowRef.confirmationResult
         .confirm(this.otpForm.value.otp)
-        .then(async (res) => {
+        .then(async (res: any) => {
           this.otpModal.nativeElement.click();
           await this.submit();
         })
-        .catch(async (error) => {
-          await this.spinner.hide();
-          this.toastr.error(error);
+        .catch(async (error: string | undefined) => {
+          // await this.spinner.hide();
+          alert(error);
         });
-    } catch (e) {
-      this.toastr.error(e);
+    } catch (e: any) {
+      alert(e.toString());
     }
   }
 
@@ -175,11 +174,11 @@ export class SignupComponent implements OnInit {
           this.signUpForm.value.role
         )
         .then(async (res) => {
-          await this.spinner.hide();
+          // await this.spinner.hide();
           if (res.Success) {
-            this.toastr.success(res.Message);
+            alert(res.Message);
             if (!res.Message.profileComplete) {
-              this.toastr.info('Please complete your profile');
+              alert('Please complete your profile');
               await this.router.navigateByUrl(
                 '/' + res.Message.role + '/' + res.Message.role + '-profile'
               );
@@ -187,31 +186,29 @@ export class SignupComponent implements OnInit {
               await this.router.navigateByUrl('');
             }
           } else {
-            this.toastr.error(res.Message);
+            alert(res.Message);
           }
         });
     } catch (e) {
-      await this.spinner.hide();
+      // await this.spinner.hide();
       console.log(e);
     }
   }
 
   async signUpWithGoogle() {
     if (!this.signUpForm.value.role || this.signUpForm.value.role === '') {
-      this.toastr.warning('Select either USER or COMPANY type', null, {
-        timeOut: 3000,
-      });
+      alert('Select either USER or COMPANY type');
       return;
     }
-    await this.spinner.show();
+    // await this.spinner.show();
     this.authservice
       .signUpWithGoogle(this.signUpForm.value.role)
       .then(async (res) => {
-        await this.spinner.hide();
+        // await this.spinner.hide();
         if (res.Success) {
-          this.toastr.success(res.Message);
+          alert(res.Message);
           if (!res.Message.profileComplete) {
-            this.toastr.info('Please complete your profile');
+            alert('Please complete your profile');
             await this.router.navigateByUrl(
               '/' + res.Message.role + '/' + res.Message.role + '-profile'
             );
@@ -219,7 +216,7 @@ export class SignupComponent implements OnInit {
             await this.router.navigateByUrl('');
           }
         } else {
-          this.toastr.error(res.Message);
+          alert(res.Message);
           console.log(res.Message);
         }
       });
@@ -227,20 +224,18 @@ export class SignupComponent implements OnInit {
 
   async signUpWithFacebook() {
     if (!this.signUpForm.value.role || this.signUpForm.value.role === '') {
-      this.toastr.warning('Select either USER or COMPANY type', null, {
-        timeOut: 3000,
-      });
+      alert('Select either USER or Retailer type');
       return;
     }
-    await this.spinner.show();
+    // await this.spinner.show();
     this.authservice
       .signUpWithFacebook(this.signUpForm.value.role)
       .then(async (res) => {
-        await this.spinner.hide();
+        // await this.spinner.hide();
         if (res.Success) {
-          this.toastr.success(res.Message);
+          alert(res.Message);
           if (!res.Message.profileComplete) {
-            this.toastr.info('Please complete your profile');
+            alert('Please complete your profile');
             await this.router.navigateByUrl(
               '/' + res.Message.role + '/' + res.Message.role + '-profile'
             );
@@ -248,7 +243,7 @@ export class SignupComponent implements OnInit {
             await this.router.navigateByUrl('');
           }
         } else {
-          this.toastr.error(res.Message);
+          alert(res.Message);
           console.log(res.Message);
         }
       });

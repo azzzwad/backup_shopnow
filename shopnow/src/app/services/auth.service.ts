@@ -1,3 +1,4 @@
+// @ts-nocheck - may need to be at the start of file
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { deleteCookie, setCookie } from '../helpers/cookie-utils';

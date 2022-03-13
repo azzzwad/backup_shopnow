@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
   pauseOnHover = true;
   pauseOnFocus = true;
 
-  @ViewChild('carousel', { static: true }) carousel: NgbCarousel;
+  @ViewChild('carousel', { static: true }) carousel!: NgbCarousel;
 
   togglePaused() {
     if (this.paused) {

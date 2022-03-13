@@ -1,3 +1,13 @@
+.auth-body {
+  /*background-image: url('../../../assets/images/authbg.jpg');*/
+  background-color: var(--first-color);
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 120vh;
+  position: relative;
+  transition: 1s;
+  font-weight: lighter;
+}
 .role-button {
   border: 1px solid var(--theme-color-light);
   background-color: transparent;

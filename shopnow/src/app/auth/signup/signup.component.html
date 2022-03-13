@@ -1,6 +1,6 @@
 <main>
-  <div class="col-md-12 col-sm-12 col-xs-12 auth-body">
-    <form [formGroup]="signUpForm" action="">
+  <div class="col-md-12 col-sm-12 col-xs-12 auth-body" id="auth-body">
+    <form [formGroup]="signUpForm">
       <div class="form-floating mb-3">
         <input
           type="email"
@@ -53,16 +53,30 @@
     <h6>Account Type</h6>
     <div class="row">
       <div class="col-md-6">
-        <div class="col-md-12 btn role-button" style="">Retailer</div>
+        <div
+          class="col-md-12 btn role-button"
+          [class.button-theme]="signUpForm.value.role == 'company'"
+          (click)="selectRole('company')"
+          [class.button-theme]="signUpForm.value.role == 'user'"
+          (click)="selectRole('user')"
+        >
+          Retailer
+        </div>
       </div>
 
       <div class="col-md-6">
-        <div class="col-md-12 btn role-button" style="">Customer</div>
+        <div
+          class="col-md-12 btn role-button"
+          [class.button-theme]="signUpForm.value.role == 'user'"
+          (click)="selectRole('user')"
+        >
+          Customer
+        </div>
       </div>
     </div>
     <br />
     <div id="recaptcha-container"></div>
-    <button class="col-md-12 signup-btn" style="">Sign Up</button>
+    <button class="col-md-12 signup-btn" (click)="signUp()">Sign Up</button>
     <br />
     <div class="row">
       <div class="col-5"><hr /></div>
@@ -73,7 +87,11 @@
     </div>
     <br />
     <div class="btn-group" style="width: 100%; border-radius: 10px">
-      <button class="btn" style="background-color: #3b5998; box-shadow: none">
+      <button
+        class="btn"
+        style="background-color: #3b5998; box-shadow: none"
+        (click)="signUpWithFacebook()"
+      >
         <i class="fa fa-facebook" style="color: white"></i>
       </button>
       <button class="btn fb-btn" style="">
@@ -84,7 +102,11 @@
     <br />
 
     <div class="btn-group" style="width: 100%; border-radius: 10px">
-      <button class="btn" style="background-color: #db4437; box-shadow: none">
+      <button
+        class="btn"
+        style="background-color: #db4437; box-shadow: none"
+        (click)="signUpWithGoogle()"
+      >
         <i class="fa fa-google" style="color: white"></i>
       </button>
       <button class="btn gl-btn">Sign up with <strong>Google</strong></button>
@@ -139,7 +161,11 @@
               style="color: white"
             />
             <br />
-            <button class="btn button-theme" style="width: 100%">
+            <button
+              class="btn button-theme"
+              style="width: 100%"
+              (click)="confirmOtp()"
+            >
               Confirm
             </button>
           </form>
