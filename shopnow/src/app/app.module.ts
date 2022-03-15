@@ -10,14 +10,15 @@ import { FooterComponent } from './footer/footer.component';
 import { AuthService } from './services/auth.service';
 import firebase from 'firebase';
 import { environment } from 'src/environments/environment';
-
+import { DbService } from './services/db.service';
+import { StorageService } from './services/storage.service';
 if (!firebase || !firebase.apps)
   firebase.initializeApp(environment.firebaseConfig);
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent, FooterComponent],
   imports: [BrowserModule, AppRoutingModule, NgbModule],
-  providers: [AuthService],
+  providers: [AuthService, DbService, StorageService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

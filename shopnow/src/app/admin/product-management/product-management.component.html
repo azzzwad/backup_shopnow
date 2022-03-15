@@ -139,23 +139,27 @@
         ></button>
       </div>
       <div class="modal-body">
-        <form>
+        <form [formGroup]="productForm">
+          <!-- Product Image -->
           <div class="product-image" style="margin-bottom: 10px; border: none">
             <input
               class="form-control"
               type="file"
-              formControlName="product_image"
+              formControlName="productImage"
               accept="image/*"
+              (change)="selectImage($event)"
             />
           </div>
+          <!-- Product Name -->
           <div class="product-title" style="margin-bottom: 15px">
             <input
               class="form-control"
               type="text"
-              formControlName="product_title"
+              formControlName="name"
               placeholder="Enter Your Product Title"
             />
           </div>
+          <!-- Product Category Selection Dropdown -->
           <div class="dropdown mt-10" style="margin-bottom: 15px">
             <select class="form-control">
               <option value="">Select a Category</option>
@@ -176,7 +180,7 @@
               </option>
             </select>
           </div>
-
+          <!-- Product Subcategory Selection Dropdown -->
           <div class="dropdown mt-10" style="margin-bottom: 15px">
             <select class="form-control">
               <option value="">Select a SubCategory</option>
@@ -197,14 +201,16 @@
               </option>
             </select>
           </div>
+          <!-- Product Price -->
           <div class="product-price" style="margin-bottom: 15px">
             <input
               class="form-control"
               type="text"
-              formControlName="product_price"
+              formControlName="price"
               placeholder="Enter Your Product Price"
             />
           </div>
+          <!-- Product Description -->
           <div class="product-description" style="margin-bottom: 15px">
             <textarea
               class="form-control"
@@ -212,7 +218,7 @@
               id=""
               cols="120"
               rows="5"
-              formControlName="product_description"
+              formControlName="description"
               placeholder="Enter Your Product Description"
             ></textarea>
           </div>

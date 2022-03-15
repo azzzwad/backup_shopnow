@@ -6,6 +6,7 @@ import { UserManagementComponent } from './user-management/user-management.compo
 import { ProductManagementComponent } from './product-management/product-management.component';
 import { OrderManagementComponent } from './order-management/order-management.component';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 const routes: Routes = [
   { path: 'category', component: CategoryManagementComponent },
   { path: 'user', component: UserManagementComponent },
@@ -20,6 +21,11 @@ const routes: Routes = [
     ProductManagementComponent,
     OrderManagementComponent,
   ],
-  imports: [CommonModule, RouterModule.forChild(routes)],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    FormsModule,
+    ReactiveFormsModule,
+  ],
 })
 export class AdminModule {}
