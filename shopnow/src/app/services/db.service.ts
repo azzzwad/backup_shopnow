@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
 import firebase from 'firebase';
+import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class DbService {
   constructor() {}
 
   async save(collection: string, id: string, obj: any) {
+    if (!firebase.apps.length) {
+      firebase.initializeApp(environment.firebaseConfig);
+    }
     const collectionReference = firebase.firestore().collection(collection);
     try {
       let data;

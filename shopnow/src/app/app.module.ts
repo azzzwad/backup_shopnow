@@ -12,12 +12,19 @@ import firebase from 'firebase';
 import { environment } from 'src/environments/environment';
 import { DbService } from './services/db.service';
 import { StorageService } from './services/storage.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 if (!firebase || !firebase.apps)
   firebase.initializeApp(environment.firebaseConfig);
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent, FooterComponent],
-  imports: [BrowserModule, AppRoutingModule, NgbModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   providers: [AuthService, DbService, StorageService],
   bootstrap: [AppComponent],
 })

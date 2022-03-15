@@ -161,43 +161,22 @@
           </div>
           <!-- Product Category Selection Dropdown -->
           <div class="dropdown mt-10" style="margin-bottom: 15px">
-            <select class="form-control">
+            <select class="form-control" (change)="selectCategory($event)">
               <option value="">Select a Category</option>
-              <option value="">
-                <p class="text-muted">Category 1</p>
-              </option>
-              <option value="">
-                <p class="text-muted">Category 1</p>
-              </option>
-              <option value="">
-                <p class="text-muted">Category 1</p>
-              </option>
-              <option value="">
-                <p class="text-muted">Category 1</p>
-              </option>
-              <option value="">
-                <p class="text-muted">Category 1</p>
+              <option
+                *ngFor="let category of categories"
+                value="{{ category.categoryName }}"
+              >
+                <p class="text-muted">{{ category.categoryName }}</p>
               </option>
             </select>
           </div>
           <!-- Product Subcategory Selection Dropdown -->
           <div class="dropdown mt-10" style="margin-bottom: 15px">
             <select class="form-control">
-              <option value="">Select a SubCategory</option>
-              <option value="">
-                <p class="text-muted">SubCategory 1</p>
-              </option>
-              <option value="">
-                <p class="text-muted">SubCategory 1</p>
-              </option>
-              <option value="">
-                <p class="text-muted">SubCategory 1</p>
-              </option>
-              <option value="">
-                <p class="text-muted">SubCategory 1</p>
-              </option>
-              <option value="">
-                <p class="text-muted">SubCategory 1</p>
+              <option value="">Select a Subcategory</option>
+              <option *ngFor="let subcategory of subcategories">
+                <p class="text-muted">{{ subcategory.subcategoryName }}</p>
               </option>
             </select>
           </div>
@@ -228,7 +207,9 @@
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
           Close
         </button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary" (click)="addProduct()">
+          Save changes
+        </button>
       </div>
     </div>
   </div>

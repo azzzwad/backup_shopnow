@@ -3,14 +3,13 @@ export class Product {
   productImage: string;
   name: string;
   description: string;
-  //   price: number;
+
   category: string;
   subcategory: string;
-  //   brandLogo: string;
 
   price: number;
   postedOn: number;
-  constructor(
+  constructor( 
     id: string,
     productImage: string,
     name: string,

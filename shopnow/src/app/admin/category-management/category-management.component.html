@@ -99,6 +99,7 @@
               type="file"
               formControlName="categoryImage"
               accept="image/*"
+              (change)="selectImage($event)"
             />
           </div>
           <div class="category-title" style="margin-bottom: 15px">
@@ -115,7 +116,9 @@
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
           Close
         </button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary" (click)="addCategory()">
+          Save changes
+        </button>
       </div>
     </div>
   </div>
@@ -152,35 +155,28 @@
             <input
               class="form-control"
               type="file"
-              formControlName="product_image"
+              formControlName="subcategoryImage"
               accept="image/*"
+              (change)="selectImage($event)"
             />
           </div>
           <div class="category-title" style="margin-bottom: 15px">
             <input
               class="form-control"
               type="text"
-              formControlName="product_title"
+              formControlName="subcategoryName"
               placeholder="Enter Subcategory Title"
             />
           </div>
+          <!-- category select dropdown -->
           <div class="dropdown mt-10">
-            <select class="form-control">
+            <select class="form-control" (change)="selectCategory($event)">
               <option value="">Select a Category</option>
-              <option value="">
-                <p class="text-muted">Category 1</p>
-              </option>
-              <option value="">
-                <p class="text-muted">Category 1</p>
-              </option>
-              <option value="">
-                <p class="text-muted">Category 1</p>
-              </option>
-              <option value="">
-                <p class="text-muted">Category 1</p>
-              </option>
-              <option value="">
-                <p class="text-muted">Category 1</p>
+              <option
+                *ngFor="let category of categories"
+                value="{{ category.categoryName }}"
+              >
+                <p class="text-muted">{{ category.categoryName }}</p>
               </option>
             </select>
           </div>
@@ -190,7 +186,13 @@
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
           Close
         </button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="addSubcategory()"
+        >
+          Save changes
+        </button>
       </div>
     </div>
   </div>
