@@ -7,6 +7,7 @@ import { ProductManagementComponent } from './product-management/product-managem
 import { OrderManagementComponent } from './order-management/order-management.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 const routes: Routes = [
   { path: 'category', component: CategoryManagementComponent },
   { path: 'user', component: UserManagementComponent },
@@ -26,6 +27,7 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     FormsModule,
     ReactiveFormsModule,
+    NgxDatatableModule,
   ],
 })
 export class AdminModule {}

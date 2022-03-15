@@ -21,6 +21,11 @@ export class ProductManagementComponent implements OnInit {
   categories: any[]; // what is this?????? for storing cat from get data,padand for html file, let cat of categories
 
   subcategories: any[];
+  selectedcategory: any;
+
+  rows;
+  columns;
+  data;
   constructor(
     private fb: FormBuilder,
     private db: DbService,
@@ -44,6 +49,7 @@ export class ProductManagementComponent implements OnInit {
     // initiate view data
     this.getCategoryData();
     this.getSubcategoryData();
+    this.getProductData();
   }
   async addProduct() {
     if (!this.productForm.value.name || this.productForm.value.name == '') {
@@ -121,6 +127,8 @@ export class ProductManagementComponent implements OnInit {
   }
   selectCategory($event: any) {
     console.log($event.target.value);
+    this.selectedcategory = $event.target.value;
+    console.log(this.selectCategory);
     this.productForm.controls['category'].setValue($event.target.value);
   }
   selectSubcategory($event: any) {
@@ -128,6 +136,43 @@ export class ProductManagementComponent implements OnInit {
     this.productForm.controls['subcategory'].setValue($event.target.value);
   }
 
+  async getProductData() {
+    try {
+      var result = await this.db.getDocuments('Product', 10);
+      if (result.Success) {
+        // @ts-ignore
+        this.rows = result.Data;
+        console.log(this.rows);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    this.columns = [
+      {
+        prop: 'name',
+        name: 'Name',
+        width: 500,
+      },
+      {
+        prop: 'price',
+        name: 'Price',
+      },
+      {
+        prop: 'category',
+        name: 'Category',
+      },
+      {
+        prop: 'subcategory',
+        name: 'Subcategory',
+        width: 200,
+      },
+      {
+        prop: 'description',
+        name: 'Description',
+        width: 700,
+      },
+    ];
+  }
   async getCategoryData() {
     try {
       var result = await this.db.getDocuments('Category', 10);

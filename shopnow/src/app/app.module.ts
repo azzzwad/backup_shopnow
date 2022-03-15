@@ -13,6 +13,7 @@ import { environment } from 'src/environments/environment';
 import { DbService } from './services/db.service';
 import { StorageService } from './services/storage.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 if (!firebase || !firebase.apps)
   firebase.initializeApp(environment.firebaseConfig);
 
@@ -24,6 +25,7 @@ if (!firebase || !firebase.apps)
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
+    NgxDatatableModule,
   ],
   providers: [AuthService, DbService, StorageService],
   bootstrap: [AppComponent],

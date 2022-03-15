@@ -15,7 +15,7 @@
         ></span>
       </h3>
     </div>
-    <div class="col-md-12 col-sm-12 col-xs-12">
+    <!-- <div class="col-md-12 col-sm-12 col-xs-12">
       <div class="row">
         <div
           class="col-md-1 col-sm-12 col-xs-12"
@@ -58,7 +58,15 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
+    <ngx-datatable
+      [rows]="rows"
+      [columns]="columns"
+      [headerHeight]="50"
+      [footerHeight]="50"
+      [scrollbarH]="true"
+      style="color: black"
+    ></ngx-datatable>
   </div>
 </main>
 <!-- Quickview Modal -->
@@ -173,10 +181,16 @@
           </div>
           <!-- Product Subcategory Selection Dropdown -->
           <div class="dropdown mt-10" style="margin-bottom: 15px">
-            <select class="form-control">
+            <select class="form-control" (change)="selectSubcategory($event)">
               <option value="">Select a Subcategory</option>
+
               <option *ngFor="let subcategory of subcategories">
-                <p class="text-muted">{{ subcategory.subcategoryName }}</p>
+                <p
+                  *ngIf="subcategory.category == selectedcategory"
+                  class="text-muted"
+                >
+                  {{ subcategory.subcategoryName }}
+                </p>
               </option>
             </select>
           </div>
