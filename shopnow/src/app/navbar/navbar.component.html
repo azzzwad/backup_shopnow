@@ -23,5 +23,26 @@
     <li class="navbar-dropdown">
       <a href="about" class="primary-nav-item">About Us</a>
     </li>
+    <li>
+      <button
+        *ngIf="currentUser"
+        style="
+          background-color: orange;
+          color: rgb(49, 49, 49);
+          margin-top: 20px;
+        "
+        (click)="logout()"
+      >
+        Logout
+      </button>
+    </li>
+    <li>
+      <button
+        *ngIf="currentUser.role == 'admin'"
+        style="background-color: orange; color: rgb(49, 49, 49)"
+      >
+        Admin Panel
+      </button>
+    </li>
   </ul>
 </nav>

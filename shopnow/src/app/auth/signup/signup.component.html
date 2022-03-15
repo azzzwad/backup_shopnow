@@ -58,10 +58,8 @@
         <div class="col-md-6">
           <div
             class="col-md-12 btn role-button"
-            [class.button-theme]="signUpForm.value.role == 'company'"
-            (click)="selectRole('company')"
-            [class.button-theme]="signUpForm.value.role == 'user'"
-            (click)="selectRole('user')"
+            [class.button-theme]="signUpForm.value.role == 'admin'"
+            (click)="selectRole('admin')"
           >
             Retailer
           </div>
