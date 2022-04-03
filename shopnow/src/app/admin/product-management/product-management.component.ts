@@ -6,6 +6,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import firebase from 'firebase';
 import { environment } from 'src/environments/environment';
+import { ColumnMode } from '@swimlane/ngx-datatable';
 @Component({
   selector: 'app-product-management',
   templateUrl: './product-management.component.html',
@@ -26,6 +27,8 @@ export class ProductManagementComponent implements OnInit {
   rows;
   columns;
   data;
+
+  ColumnMode = ColumnMode;
   constructor(
     private fb: FormBuilder,
     private db: DbService,

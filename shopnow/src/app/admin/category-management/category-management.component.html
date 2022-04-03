@@ -17,20 +17,34 @@
       ></span>
     </h3>
   </div>
-  <div class="col-md-12 col-sm-12 col-xs-12">
-    <div class="row">
-      <div class="col-md-3" *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8]">
-        <div class="category-poster">
-          <div class="category-info">
-            <span>
-              <h3 class="category-title">Top Selling Products</h3>
-              <p class="item-count">10 items available</p>
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <ngx-datatable
+    [rows]="rows"
+    [columnMode]="ColumnMode.force"
+    [headerHeight]="50"
+    [footerHeight]="50"
+    [scrollbarH]="true"
+  >
+    <ngx-datatable-column name="Category" prop="categoryName" [width]="300">
+      <ng-template let-value="value" ngx-datatable-cell-template>
+        <strong>{{ value }}</strong>
+      </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column
+      name="Category Image"
+      prop="categoryLogo"
+      [width]="300"
+    >
+      <ng-template let-value="value" ngx-datatable-cell-template>
+        <img
+          src="{{ value }}"
+          alt=""
+          style="height: 50px; width: 50px; margin: 5px"
+        />
+      </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="Posted On" prop="postedOn" [width]="300">
+    </ngx-datatable-column>
+  </ngx-datatable>
 
   <!-- Sub Cat  -->
   <div class="section-title text-center">
@@ -50,20 +64,34 @@
       ></span>
     </h3>
   </div>
-  <div class="col-md-12 col-sm-12 col-xs-12">
-    <div class="row">
-      <div
-        class="col-md-3"
-        *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
-      >
-        <div class="flash-poster-large">
-          <span>
-            <h3 class="flash-title">Microsoft Surface Laptop 14"</h3>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
+  <ngx-datatable
+    [rows]="sub_rows"
+    [columnMode]="ColumnMode.force"
+    [headerHeight]="50"
+    [footerHeight]="50"
+    [scrollbarH]="true"
+  >
+    <ngx-datatable-column name="Category" prop="subcategoryName" [width]="300">
+      <ng-template let-value="value" ngx-datatable-cell-template>
+        <strong>{{ value }}</strong>
+      </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column
+      name="Category Image"
+      prop="subcategoryLogo"
+      [width]="300"
+    >
+      <ng-template let-value="value" ngx-datatable-cell-template>
+        <img
+          src="{{ value }}"
+          alt=""
+          style="height: 50px; width: 50px; margin: 5px"
+        />
+      </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="Posted On" prop="postedOn" [width]="300">
+    </ngx-datatable-column>
+  </ngx-datatable>
 </main>
 
 <!-- Category Modal -->

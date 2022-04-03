@@ -4,13 +4,13 @@ export class Subcategory {
   subcategoryName: string;
   category: string;
 
-  postedOn: number;
+  postedOn: string;
   constructor(
     id: string,
     subcategoryLogo: string,
     subcategoryName: string,
     category: string,
-    postedOn: number
+    postedOn: string
   ) {
     this.id = id;
     this.subcategoryLogo = subcategoryLogo;

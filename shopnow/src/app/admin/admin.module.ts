@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CategoryManagementComponent } from './category-management/category-management.component';
 
@@ -8,11 +8,19 @@ import { OrderManagementComponent } from './order-management/order-management.co
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { AdminComponent } from './admin/admin.component';
+
 const routes: Routes = [
-  { path: 'category', component: CategoryManagementComponent },
-  { path: 'user', component: UserManagementComponent },
-  { path: 'product', component: ProductManagementComponent },
-  { path: 'order', component: OrderManagementComponent },
+  {
+    path: '',
+    component: AdminComponent,
+    children: [
+      { path: 'category', component: CategoryManagementComponent },
+      { path: 'user', component: UserManagementComponent },
+      { path: 'product', component: ProductManagementComponent },
+      { path: 'order', component: OrderManagementComponent },
+    ],
+  },
 ];
 @NgModule({
   declarations: [
@@ -21,6 +29,7 @@ const routes: Routes = [
     UserManagementComponent,
     ProductManagementComponent,
     OrderManagementComponent,
+    AdminComponent,
   ],
   imports: [
     CommonModule,
@@ -29,5 +38,6 @@ const routes: Routes = [
     ReactiveFormsModule,
     NgxDatatableModule,
   ],
+  exports: [RouterModule],
 })
 export class AdminModule {}

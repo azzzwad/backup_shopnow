@@ -3,13 +3,13 @@ export class Category {
   categoryLogo: string;
   categoryName: string;
 
-  postedOn: number;
+  postedOn: string;
   constructor(
     id: string,
     categoryLogo: string,
     categoryName: string,
 
-    postedOn: number
+    postedOn: string
   ) {
     this.id = id;
     this.categoryLogo = categoryLogo;

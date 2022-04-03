@@ -7,6 +7,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import firebase from 'firebase';
 import { environment } from 'src/environments/environment';
+import { ColumnMode } from '@swimlane/ngx-datatable';
 @Component({
   selector: 'app-category-management',
   templateUrl: './category-management.component.html',
@@ -23,7 +24,16 @@ export class CategoryManagementComponent implements OnInit {
   categoryForm!: FormGroup;
   subcategoryForm!: FormGroup;
   id: string;
-  postedOn: number;
+  postedOn: string;
+
+  rows;
+  columns;
+  data;
+
+  sub_rows;
+  sub_columns;
+
+  ColumnMode = ColumnMode;
 
   constructor(
     private fb: FormBuilder,
@@ -48,7 +58,7 @@ export class CategoryManagementComponent implements OnInit {
     // initiate view data
     this.getCategoryData();
     this.getSubcategoryData();
-    console.log(this.getCategoryData);
+    // console.log(this.getCategoryData);
   }
 
   async addCategory() {
@@ -85,7 +95,7 @@ export class CategoryManagementComponent implements OnInit {
 
     // id and postedOn variable for slider object id and posted time
     this.id = JSON.stringify(new Date().getTime());
-    this.postedOn = new Date().getTime();
+    this.postedOn = new Date().toUTCString().toString();
 
     let categoryObj = new Category(
       this.id,
@@ -147,7 +157,7 @@ export class CategoryManagementComponent implements OnInit {
 
     // id and postedOn variable for slider object id and posted time
     this.id = JSON.stringify(new Date().getTime());
-    this.postedOn = new Date().getTime();
+    this.postedOn = new Date().toUTCString().toString();
 
     let subcategoryObj = new Subcategory(
       this.id,
@@ -179,6 +189,7 @@ export class CategoryManagementComponent implements OnInit {
     this.subcategoryForm.controls['category'].setValue($event.target.value);
   }
   // function for storing image
+
   selectImage(ev) {
     this.image = this.sanitizer.bypassSecurityTrustUrl(
       window.URL.createObjectURL(ev.target.files[0])
@@ -191,21 +202,66 @@ export class CategoryManagementComponent implements OnInit {
       var result = await this.db.getDocuments('Category', 10);
       if (result.Success) {
         // @ts-ignore
-        this.categories = result.Data;
+        // this.categories = result.Data;
+        this.rows = result.Data;
+        console.log(this.rows);
       }
     } catch (error) {
       console.log(error);
     }
+    this.columns = [
+      {
+        prop: 'categoryName',
+        name: 'Name',
+        width: 500,
+      },
+
+      {
+        prop: 'categoryLogo',
+        name: 'Category Image',
+        width: 500,
+        height: 500,
+      },
+
+      {
+        prop: 'postedOn',
+        name: 'Posted On',
+        width: 500,
+        height: 500,
+      },
+    ];
   }
   async getSubcategoryData() {
     try {
       var result = await this.db.getDocuments('Subcategory', 10);
       if (result.Success) {
         // @ts-ignore
-        this.subcategories = result.Data;
+        // this.subcategories = result.Data;
+        this.sub_rows = result.Data;
       }
     } catch (error) {
       console.log(error);
     }
+    this.sub_columns = [
+      {
+        prop: 'subcategoryName',
+        name: 'Name',
+        width: 500,
+      },
+
+      {
+        prop: 'subcategoryLogo',
+        name: 'Sub-Category Image',
+        width: 500,
+        height: 500,
+      },
+
+      {
+        prop: 'postedOn',
+        name: 'Posted On',
+        width: 500,
+        height: 500,
+      },
+    ];
   }
 }

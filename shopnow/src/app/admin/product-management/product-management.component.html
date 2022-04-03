@@ -61,12 +61,49 @@
     </div> -->
     <ngx-datatable
       [rows]="rows"
-      [columns]="columns"
+      [columnMode]="ColumnMode.force"
       [headerHeight]="50"
       [footerHeight]="50"
       [scrollbarH]="true"
-      [limit]="3"
     >
+      <ngx-datatable-column name="Name" prop="name" [width]="100">
+        <ng-template let-value="value" ngx-datatable-cell-template>
+          <strong>{{ value }}</strong>
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Price" prop="price" [width]="100">
+        <ng-template let-value="value" ngx-datatable-cell-template>
+          <strong>{{ value }} BDT</strong>
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Image" prop="productImage" [width]="300">
+        <ng-template let-value="value" ngx-datatable-cell-template>
+          <img
+            src="{{ value }}"
+            alt=""
+            style="height: 50px; width: 50px; margin: 5px"
+          />
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Category" prop="category" [width]="100">
+        <ng-template let-value="value" ngx-datatable-cell-template>
+          <strong>{{ value }} </strong>
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column
+        name="Sub Category"
+        prop="subcategory"
+        [width]="100"
+      >
+        <ng-template let-value="value" ngx-datatable-cell-template>
+          <strong>{{ value }} </strong>
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Posted On" prop="postedOn" [width]="100">
+        <ng-template let-value="value" ngx-datatable-cell-template>
+          <strong>{{ value }} </strong>
+        </ng-template>
+      </ngx-datatable-column>
     </ngx-datatable>
   </div>
 </main>
