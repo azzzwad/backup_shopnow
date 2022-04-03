@@ -66,17 +66,17 @@
       [footerHeight]="50"
       [scrollbarH]="true"
     >
-      <ngx-datatable-column name="Name" prop="name" [width]="100">
+      <ngx-datatable-column name="Name" prop="name" [width]="500">
         <ng-template let-value="value" ngx-datatable-cell-template>
-          <strong>{{ value }}</strong>
+          {{ value }}
         </ng-template>
       </ngx-datatable-column>
       <ngx-datatable-column name="Price" prop="price" [width]="100">
         <ng-template let-value="value" ngx-datatable-cell-template>
-          <strong>{{ value }} BDT</strong>
+          {{ value }} BDT
         </ng-template>
       </ngx-datatable-column>
-      <ngx-datatable-column name="Image" prop="productImage" [width]="300">
+      <ngx-datatable-column name="Image" prop="productImage" [width]="100">
         <ng-template let-value="value" ngx-datatable-cell-template>
           <img
             src="{{ value }}"
@@ -87,7 +87,7 @@
       </ngx-datatable-column>
       <ngx-datatable-column name="Category" prop="category" [width]="100">
         <ng-template let-value="value" ngx-datatable-cell-template>
-          <strong>{{ value }} </strong>
+          {{ value }}
         </ng-template>
       </ngx-datatable-column>
       <ngx-datatable-column
@@ -96,12 +96,12 @@
         [width]="100"
       >
         <ng-template let-value="value" ngx-datatable-cell-template>
-          <strong>{{ value }} </strong>
+          {{ value }}
         </ng-template>
       </ngx-datatable-column>
       <ngx-datatable-column name="Posted On" prop="postedOn" [width]="100">
         <ng-template let-value="value" ngx-datatable-cell-template>
-          <strong>{{ value }} </strong>
+          {{ value }}
         </ng-template>
       </ngx-datatable-column>
     </ngx-datatable>

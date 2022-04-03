@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Product } from 'src/app/models/product';
 import { DbService } from 'src/app/services/db.service';
 import { StorageService } from 'src/app/services/storage.service';
@@ -29,6 +29,10 @@ export class ProductManagementComponent implements OnInit {
   data;
 
   ColumnMode = ColumnMode;
+
+  @ViewChild('myTable') table: any;
+
+  expanded: any = {};
   constructor(
     private fb: FormBuilder,
     private db: DbService,
@@ -198,5 +202,9 @@ export class ProductManagementComponent implements OnInit {
     } catch (error) {
       console.log(error);
     }
+  }
+  toggleExpandRow(row) {
+    console.log('Toggled Expand Row!', row);
+    this.table.rowDetail.toggleExpandRow(row);
   }
 }
