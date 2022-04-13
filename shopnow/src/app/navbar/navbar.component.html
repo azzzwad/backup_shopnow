@@ -23,6 +23,12 @@
     <li class="navbar-dropdown">
       <a href="about" class="primary-nav-item">About Us</a>
     </li>
+
+    <li class="navbar-dropdown">
+      <a *ngIf="currentUser" href="admin" class="primary-nav-item">
+        Admin Panel
+      </a>
+    </li>
     <li>
       <button
         *ngIf="currentUser"
@@ -34,11 +40,6 @@
         (click)="logout()"
       >
         Logout
-      </button>
-    </li>
-    <li>
-      <button style="background-color: orange; color: rgb(49, 49, 49)">
-        Admin Panel
       </button>
     </li>
   </ul>
