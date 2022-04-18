@@ -14,6 +14,7 @@ import { DbService } from './services/db.service';
 import { StorageService } from './services/storage.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+
 if (!firebase || !firebase.apps)
   firebase.initializeApp(environment.firebaseConfig);
 

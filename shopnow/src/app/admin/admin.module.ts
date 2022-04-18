@@ -9,6 +9,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { AdminComponent } from './admin/admin.component';
+import { SearchFilterPipe } from '../search-filter.pipe';
 
 const routes: Routes = [
   {
@@ -30,6 +31,7 @@ const routes: Routes = [
     ProductManagementComponent,
     OrderManagementComponent,
     AdminComponent,
+    SearchFilterPipe,
   ],
   imports: [
     CommonModule,

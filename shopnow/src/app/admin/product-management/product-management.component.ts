@@ -7,6 +7,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import firebase from 'firebase';
 import { environment } from 'src/environments/environment';
 import { ColumnMode } from '@swimlane/ngx-datatable';
+import { SearchFilterPipe } from 'src/app/Pipes/search-filter.pipe';
 @Component({
   selector: 'app-product-management',
   templateUrl: './product-management.component.html',
@@ -30,9 +31,13 @@ export class ProductManagementComponent implements OnInit {
 
   ColumnMode = ColumnMode;
 
+  searchTerm: string;
+
   @ViewChild('myTable') table: any;
 
   expanded: any = {};
+  result: any[];
+  products: any[];
   constructor(
     private fb: FormBuilder,
     private db: DbService,
@@ -149,7 +154,8 @@ export class ProductManagementComponent implements OnInit {
       if (result.Success) {
         // @ts-ignore
         this.rows = result.Data;
-        console.log(this.rows);
+        this.products = result.Data;
+        console.log(this.products);
       }
     } catch (error) {
       console.log(error);
@@ -206,5 +212,11 @@ export class ProductManagementComponent implements OnInit {
   toggleExpandRow(row) {
     console.log('Toggled Expand Row!', row);
     this.table.rowDetail.toggleExpandRow(row);
+  }
+  search(value: string): void {
+    this.result = this.products.filter((val) =>
+      val.name.toLowerCase().includes(value)
+    );
+    // console.log(this.products);
   }
 }
