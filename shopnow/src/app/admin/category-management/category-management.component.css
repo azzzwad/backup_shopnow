@@ -1,4 +1,3 @@
-
 /* Category Poster */
 .category-poster {
   border-radius: 1em;
@@ -137,4 +136,73 @@
 
   /* transform: scaleX(0); */
   transform-origin: middle;
+}
+
+/* searchbar */
+.search-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+}
+
+.searchbar {
+  float: right;
+  background-color: white;
+  color: var(--theme-color);
+  padding: 6px 10px;
+  width: 120px;
+  border: none;
+  margin-top: 1px;
+  margin-right: 8px;
+  font-family: "Segoe UI Light", "Segoe UI", "Segoe", Tahoma, Helvetica, Arial,
+    sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  border-bottom: var(--theme-color) solid 2px;
+  transition: 0.3s;
+}
+
+.searchbar::placeholder {
+  color: black;
+  font-family: "Segoe UI Light", "Segoe UI", "Segoe", Tahoma, Helvetica, Arial,
+    sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  /* transition: 0.2s; */
+}
+
+.searchbar:focus {
+  width: 400px;
+  font-family: "Segoe UI Light", "Segoe UI", "Segoe", Tahoma, Helvetica, Arial,
+    sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s;
+  /* Stops the input box from inheriting the styling from the inputs on the request form */
+  border-bottom: var(--theme-color) solid 2px;
+  outline: none;
+}
+
+.btn-search {
+  cursor: pointer;
+  color: var(--theme-color);
+  text-decoration: none !important;
+  font-family: "Segoe UI Light", "Segoe UI", "Segoe", Tahoma, Helvetica, Arial,
+    sans-serif;
+  font-size: 1.5em;
+  padding-top: 5px;
+  margin-right: 40px;
+}
+
+/* file button */
+.file-button {
+  background-color: var(--theme-color);
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+}
+.file-button:hover {
+  background-color: var(--theme-color-light);
 }

@@ -4,21 +4,38 @@
       <span> Category Management </span>
       <br />
       <br />
-      <span>All Categories</span>
-      <br />
-      <br />
-      <span>
-        <a
-          type="button"
-          class="btn btn-primary"
-          data-bs-toggle="modal"
-          data-bs-target="#CategoryUploadModal"
-          ><i class="zmdi zmdi-file-add"></i></a
-      ></span>
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-6" style="text-align: left">
+            <a
+              type="button"
+              class="file-button"
+              data-bs-toggle="modal"
+              data-bs-target="#ProductUploadModal"
+              ><i class="zmdi zmdi-file-add"></i
+            ></a>
+          </div>
+
+          <div class="search-container col-md-6" style="">
+            <input
+              id="searchBar"
+              class="searchbar searchTerm"
+              name="searchTerm"
+              type="text"
+              placeholder="Search..."
+              [(ngModel)]="searchTerm_cat"
+              (input)="searchCat($event.target.value)"
+            />
+            <a id="btnSearch" class="btn-search"
+              ><i class="fa fa-search"></i
+            ></a>
+          </div>
+        </div>
+      </div>
     </h3>
   </div>
   <ngx-datatable
-    [rows]="rows"
+    [rows]="result_cat"
     [columnMode]="ColumnMode.force"
     [headerHeight]="50"
     [footerHeight]="50"
@@ -50,22 +67,43 @@
   <div class="section-title text-center">
     <br />
     <br />
-    <h3>
-      <span>All Sub Categories</span>
-      <br />
-      <br />
-      <span>
-        <a
-          type="button"
-          class="btn btn-primary"
-          data-bs-toggle="modal"
-          data-bs-target="#SubCategoryUploadModal"
-          ><i class="zmdi zmdi-file-add"></i></a
-      ></span>
-    </h3>
+    <div class="section-title text-center">
+      <h3>
+        <span>All Sub Categories</span>
+        <br />
+        <br />
+      </h3>
+    </div>
+
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-6" style="text-align: left">
+          <a
+            type="button"
+            class="file-button"
+            data-bs-toggle="modal"
+            data-bs-target="#ProductUploadModal"
+            ><i class="zmdi zmdi-file-add"></i
+          ></a>
+        </div>
+
+        <div class="search-container col-md-6" style="">
+          <input
+            id="searchBar"
+            class="searchbar searchTerm"
+            name="searchTerm"
+            type="text"
+            placeholder="Search..."
+            [(ngModel)]="searchTerm_sub"
+            (input)="searchSub($event.target.value)"
+          />
+          <a id="btnSearch" class="btn-search"><i class="fa fa-search"></i></a>
+        </div>
+      </div>
+    </div>
   </div>
   <ngx-datatable
-    [rows]="sub_rows"
+    [rows]="result_sub"
     [columnMode]="ColumnMode.force"
     [headerHeight]="50"
     [footerHeight]="50"

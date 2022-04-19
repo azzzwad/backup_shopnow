@@ -34,6 +34,10 @@ export class CategoryManagementComponent implements OnInit {
   sub_columns;
 
   ColumnMode = ColumnMode;
+  result_cat: any;
+  result_sub: any;
+  searchTerm_cat: string;
+  searchTerm_sub: string;
 
   constructor(
     private fb: FormBuilder,
@@ -202,7 +206,7 @@ export class CategoryManagementComponent implements OnInit {
       var result = await this.db.getDocuments('Category', 10);
       if (result.Success) {
         // @ts-ignore
-        // this.categories = result.Data;
+        this.categories = result.Data;
         this.rows = result.Data;
         console.log(this.rows);
       }
@@ -236,7 +240,7 @@ export class CategoryManagementComponent implements OnInit {
       var result = await this.db.getDocuments('Subcategory', 10);
       if (result.Success) {
         // @ts-ignore
-        // this.subcategories = result.Data;
+        this.subcategories = result.Data;
         this.sub_rows = result.Data;
       }
     } catch (error) {
@@ -263,5 +267,18 @@ export class CategoryManagementComponent implements OnInit {
         height: 500,
       },
     ];
+  }
+
+  searchCat(value: string): void {
+    this.result_cat = this.categories.filter((val) =>
+      val.categoryName.toLowerCase().includes(value.toLowerCase())
+    );
+    console.log(this.result_cat);
+  }
+  searchSub(value: string): void {
+    this.result_sub = this.subcategories.filter((val) =>
+      val.subcategoryName.toLowerCase().includes(value.toLowerCase())
+    );
+    console.log(this.result_sub);
   }
 }
