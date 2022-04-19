@@ -221,7 +221,7 @@ export class ProductManagementComponent implements OnInit {
   // }
   search(value: string): void {
     this.result = this.products.filter((val) =>
-      val.name.toLowerCase().includes(value)
+      val.name.toLowerCase().includes(value.toLowerCase())
     );
     console.log(this.result);
   }

@@ -5,95 +5,40 @@
         <span>Product Management </span>
         <br />
         <br />
-        <span
-          ><a
-            type="button"
-            class="btn btn-primary"
-            data-bs-toggle="modal"
-            data-bs-target="#ProductUploadModal"
-            ><i class="zmdi zmdi-file-add"></i></a
-        ></span>
-        <div class="container">
-          <input
-            id="searchBar"
-            class="searchbar searchTerm"
-            name="searchTerm"
-            type="text"
-            placeholder="Search..."
-            [(ngModel)]="searchTerm"
-            (input)="search($event.target.value)"
-          />
-          <a id="btnSearch" class="btn-search"><i class="fa fa-search"></i></a>
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-6" style="text-align: left">
+              <a
+                type="button"
+                class="file-button"
+                data-bs-toggle="modal"
+                data-bs-target="#ProductUploadModal"
+                ><i class="zmdi zmdi-file-add"></i
+              ></a>
+            </div>
+
+            <div class="search-container col-md-6" style="">
+              <input
+                id="searchBar"
+                class="searchbar searchTerm"
+                name="searchTerm"
+                type="text"
+                placeholder="Search..."
+                [(ngModel)]="searchTerm"
+                (input)="search($event.target.value)"
+              />
+              <a id="btnSearch" class="btn-search"
+                ><i class="fa fa-search"></i
+              ></a>
+            </div>
+          </div>
         </div>
       </h3>
     </div>
 
-    <table *ngIf="result && result.length > 0" class="table table-striped">
-      <thead>
-        <tr>
-          <!-- <th scope="col">#</th> -->
-          <th scope="col">Name</th>
-          <th scope="col">Price</th>
-          <th scope="col">Category</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of result">
-          <!-- <td scope="row">{{ i + 1 }}</td> -->
-          <td>
-            {{ item.name }}
-          </td>
-          <td>{{ item.price }}</td>
-          <td>{{ item.category }}</td>
-        </tr>
-      </tbody>
-    </table>
-    <!-- <div class="col-md-12 col-sm-12 col-xs-12">
-      <div class="row">
-        <div
-          class="col-md-1 col-sm-12 col-xs-12"
-          *ngFor="
-            let item of [
-              1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
-              20
-            ]
-          "
-          style="margin: 0px 5em 2em 0px"
-        >
-          <div class="product-item product-item-2 list-product">
-            <div class="product-img">
-              <a>
-                <img
-                  src="https://mageblueskytech.com/dukamarket/media/catalog/product/cache/e056f2085c1b5fe6902b0a5e86573793/3/0/x30_1.jpg.pagespeed.ic._8B_ECWiga.jpg"
-                  alt=""
-                />
-              </a>
-            </div>
-            <div class="product-info">
-              <h6 class="product-title">
-                <a>N70</a>
-              </h6>
-              <h6 class="brand-name">Nokia</h6>
-              <h3 class="pro-price">$ 869.00</h3>
-            </div>
-            <ul class="action-button">
-              <li>
-                <a
-                  type="button"
-                  class="btn btn-primary"
-                  data-bs-toggle="modal"
-                  data-bs-target="#QuickviewModal"
-                  ><i class="zmdi zmdi-zoom-in"></i
-                ></a>
-              </li>
-              <br />
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div> -->
+    <h1 style="text-align: center">Search Table</h1>
     <ngx-datatable
-      [rows]="rows"
+      [rows]="result"
       [columnMode]="ColumnMode.force"
       [headerHeight]="50"
       [footerHeight]="50"
@@ -138,6 +83,53 @@
         </ng-template>
       </ngx-datatable-column>
     </ngx-datatable>
+    <!-- sssss -->
+    <!-- <ngx-datatable
+      [rows]="rows"
+      [columnMode]="ColumnMode.force"
+      [headerHeight]="50"
+      [footerHeight]="50"
+      [scrollbarH]="true"
+    >
+      <ngx-datatable-column name="Name" prop="name" [width]="500">
+        <ng-template let-value="value" ngx-datatable-cell-template>
+          {{ value }}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Price" prop="price" [width]="100">
+        <ng-template let-value="value" ngx-datatable-cell-template>
+          {{ value }} BDT
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Image" prop="productImage" [width]="100">
+        <ng-template let-value="value" ngx-datatable-cell-template>
+          <img
+            src="{{ value }}"
+            alt=""
+            style="height: 50px; width: 50px; margin: 5px"
+          />
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Category" prop="category" [width]="100">
+        <ng-template let-value="value" ngx-datatable-cell-template>
+          {{ value }}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column
+        name="Sub Category"
+        prop="subcategory"
+        [width]="100"
+      >
+        <ng-template let-value="value" ngx-datatable-cell-template>
+          {{ value }}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Posted On" prop="postedOn" [width]="100">
+        <ng-template let-value="value" ngx-datatable-cell-template>
+          {{ value }}
+        </ng-template>
+      </ngx-datatable-column>
+    </ngx-datatable> -->
   </div>
 </main>
 <!-- Quickview Modal -->
