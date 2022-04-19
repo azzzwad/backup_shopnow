@@ -28,23 +28,23 @@
       </h3>
     </div>
 
-    <table class="table table-striped">
+    <table *ngIf="result && result.length > 0" class="table table-striped">
       <thead>
         <tr>
-          <th scope="col">#</th>
+          <!-- <th scope="col">#</th> -->
           <th scope="col">Name</th>
           <th scope="col">Price</th>
           <th scope="col">Category</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of result | searchFilter: searchTerm; index as i">
-          <td scope="row">{{ i + 1 }}</td>
+        <tr *ngFor="let item of result">
+          <!-- <td scope="row">{{ i + 1 }}</td> -->
           <td>
             {{ item.name }}
           </td>
-          <td>{{ item.price | number }}</td>
-          <td>{{ item.category | number }}</td>
+          <td>{{ item.price }}</td>
+          <td>{{ item.category }}</td>
         </tr>
       </tbody>
     </table>

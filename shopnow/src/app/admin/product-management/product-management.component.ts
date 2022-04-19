@@ -213,10 +213,16 @@ export class ProductManagementComponent implements OnInit {
     console.log('Toggled Expand Row!', row);
     this.table.rowDetail.toggleExpandRow(row);
   }
+  // search(value: string): void {
+  //   this.result = this.products.filter((val) =>
+  //     val.name.toLowerCase().includes(value)
+  //   );
+  //   // console.log(this.products);
+  // }
   search(value: string): void {
     this.result = this.products.filter((val) =>
       val.name.toLowerCase().includes(value)
     );
-    // console.log(this.products);
+    console.log(this.result);
   }
 }
